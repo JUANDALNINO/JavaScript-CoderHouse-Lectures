@@ -61,3 +61,36 @@ otraVar;
 
 var newVar2 = true || true;
 newVar;
+
+
+
+/*
+programa que pida:
+- Operacion: suma / multi
+- 2 numeros
+- Imprimir en console el resultado
+*/
+
+let num1 = Number(prompt("Digite el primer numero"));
+let num2 = Number(prompt("Digite el segundo numero"));
+
+let suma = num1 + num2;
+let multi = num1 * num2;
+
+let operacion = prompt("¿Cuál operacion deseas realizar? => SUMA (+) o MULTIPLICACION (*)");
+
+if (operacion === "+") {
+  alert("La suma de: " + num1 + " + " + num2 + " = " + suma);
+};
+else if (operacion === "*") {
+  alert("La multiplicacion de: " + num1 + " * " + num2 + " = " + multi);
+};
+
+/* 
+if (operacion === "SUMA") {
+  console.log("La suma es: " + suma);
+} 
+else if (operacion === "MULTIPLICACION") {
+  console.log("La multiplicacion es: " + multi);
+};
+*/
