@@ -1,0 +1,22 @@
+var condicion = 1 == "1";
+condicion;
+
+/* Tipo de dato */
+var condicion2 = "1" === 1;
+condicion2;
+
+var condicion3 = "1" !== 2;
+condicion3;
+
+var cuatro = 1 < 2;
+cuatro;
+
+var cinco = 1 > 2;
+cinco;
+
+var seis = 1 <= 2;
+seis;
+
+var siete = 1 >= 2;
+siete;
+
