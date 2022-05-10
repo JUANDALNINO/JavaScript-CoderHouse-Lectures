@@ -76,14 +76,32 @@ let num2 = Number(prompt("Digite el segundo numero"));
 
 let suma = num1 + num2;
 let multi = num1 * num2;
+let resta = num1 - num2;
+let divi = num1 / num2;
 
-let operacion = prompt("¿Cuál operacion deseas realizar? => SUMA (+) o MULTIPLICACION (*)");
+let operacion = prompt("¿Cuál operacion deseas realizar? => SUMA (+) o MULTIPLICACION (*) o RESTA (-) o DIVISION (/)");
 
-if (operacion === "+") {
-  alert("La suma de: " + num1 + " + " + num2 + " = " + suma);
-};
-else if (operacion === "*") {
-  alert("La multiplicacion de: " + num1 + " * " + num2 + " = " + multi);
+if (isNaN(num1) || isNaN(num2)) {
+    alert("Numeros no validos")
+}
+else {
+    if (operacion === "+") {
+        alert("La suma de: " + num1 + " + " + num2 + " = " + suma);
+        }
+        else if (operacion === "*") {
+            alert("La multiplicacion de: " + num1 + " * " + num2 + " = " + multi);
+        }
+        else if (operacion === "-") {
+            alert("La resta de: " + num1 + " - " + num2 + " = " + resta);
+        }
+        else if (operacion === "/") {
+            if(num2 === 0) {
+                alert("No se puede dividir en 0")
+            } 
+            else {
+                alert("La division de: " + num1 + " / " + num2 + " = " + divi);
+            }
+        }
 };
 
 /* 
