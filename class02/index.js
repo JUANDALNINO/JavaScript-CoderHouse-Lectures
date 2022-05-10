@@ -49,3 +49,15 @@ siete;
 
 var ocho = !condicion;
 ocho;
+
+var otraVar = true && false;
+otraVar;
+
+var newVar = true && true;
+newVar;
+
+var otraVar1 = true || false;
+otraVar;
+
+var newVar2 = true || true;
+newVar;
