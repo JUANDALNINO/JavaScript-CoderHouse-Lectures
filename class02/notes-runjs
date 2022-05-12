@@ -1,13 +1,3 @@
-// Exercise: Ajedrez
+var i = 1;
 
-for (let linea = 1; linea <= 8; linea++) {
-  if (linea === 1 || linea === 8) {
-    console.log("TCARRACT");
-  }
-  else if (linea === 2 || linea === 7) {
-    console.log("PPPPPPPP");
-  }
-  else {
-    console.log("00000000");
-  }
-}
+i;

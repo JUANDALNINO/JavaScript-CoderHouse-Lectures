@@ -6,6 +6,7 @@
 // var => conteo del ciclo
 // var => finalizacion
 
+//   1. FOR
 /*
 for(desde; hasta; actualización) {
     … //lo que se escriba acá se ejecutará mientras dure el ciclo
@@ -59,3 +60,69 @@ for (let linea = 1; linea <= 8; linea++) {
     }
   }
 
+
+
+// 2. WHILE
+
+let i = 1;
+while (i <= 10)
+  {
+    console.log(i);
+    i++;
+  };
+
+
+  // Ciclo de pares
+let j = 2;
+while (j <= 10) {
+    console.log(j);
+    j+=2;
+}
+
+// Ciclo de impares
+let r = 1;
+while (r <= 10) {
+    console.log(r);
+    r+=2;
+}
+
+
+// Exercise 2
+let numPaquetes = Number(prompt("Ingrese el numero de paquetes"));
+
+let mayor = 0;
+let menor = 0;
+
+let pesoPaquete = 0;
+
+for (let i = 1; i <= numPaquetes; i++) {
+    let pesoActual = Number(prompt("Ingrese el peso del paquete " + i));
+    pesoPaquete += pesoActual;
+    if (pesoActual > mayor) {
+        mayor = pesoActual;
+    }
+    if (i == 1) {
+    }
+ };
+
+ alert("El promedio del peso de los paquetes es igual a: " + pesoPaquete / numPaquetes);
+
+
+ // Factorial:
+ /*
+1. Numero a factorizar:
+2. Multiplicar el numero anterior por el numero ingresado
+3. Resultado de ese primero >
+4. Multiplicar 
+#. Resultado
+ */
+
+// 1.
+let n = Number(prompt("Ingrese un número"))
+let resultadoFactorial = 1;
+
+for (let numeroI = 1; numeroI <= n;  numeroI++) {
+    resultadoFactorial = resultadoFactorial * numeroI;
+};
+
+alert("El factorial es: " + resultadoFactorial);
