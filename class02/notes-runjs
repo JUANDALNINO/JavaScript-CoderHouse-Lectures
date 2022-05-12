@@ -1,14 +1,13 @@
-let num1 = Number(prompt("Digite el primer numero"));
-let num2 = Number(prompt("Digite el segundo numero"));
+// Exercise: Ajedrez
 
-let suma = num1 + num2;
-let multi = num1 * num2;
-
-let operacion = prompt("¿Cuál operacion deseas realizar? => SUMA (+) o MULTIPLICACION (*)");
-
-if (operacion === "+") {
-  alert("La suma de: " + num1 + " + " + num2 + " = " + suma);
+for (let linea = 1; linea <= 8; linea++) {
+  if (linea === 1 || linea === 8) {
+    console.log("TCARRACT");
+  }
+  else if (linea === 2 || linea === 7) {
+    console.log("PPPPPPPP");
+  }
+  else {
+    console.log("00000000");
+  }
 }
-else if (operacion === "*") {
-  alert("La multiplicacion de: " + num1 + " * " + num2 + " = " + multi);
-};
