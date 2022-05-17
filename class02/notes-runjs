@@ -1,3 +1,14 @@
-var i = 1;
+let suma = function (a, b) {
+    return (a + b);
+};
 
-i;
+suma (10, 20);
+
+
+let resta = (a, b) => {
+    return (a - b);
+};
+resta (20, 10);
+
+let multiplicacion = (a, b) => a * b;
+multiplicacion(3, 4):
