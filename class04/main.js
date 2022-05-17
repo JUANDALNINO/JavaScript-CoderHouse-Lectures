@@ -53,3 +53,7 @@ let res = multiplicacion (numberA, numberB);
 alert(`La multi es ${res}`);
 
 
+// Exercise:
+function mostrarMenu () {
+    
+}
