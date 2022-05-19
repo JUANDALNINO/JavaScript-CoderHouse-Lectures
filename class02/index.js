@@ -197,3 +197,21 @@ let num3 = Number(prompt("Please write the third number"));
 Function `findTriangleType()` finds the type of the triangle for given side values by using “==” and “&&” operator in JavaScript.
 */
 
+let side1 = Number(prompt("Please write a side 1"));
+let side2 = Number(prompt("Please write a side 2"));
+let side3 = Number(prompt("Please write a side 3"));
+
+if (side1 == side2 && side1 == side3) {
+    alert("Your triangle is Equilateral!")
+} else if (side1 == side2 || side2 == side3) {
+    alert("Your triangle is Isosceles!!");
+} else {
+    alert("Your triangle is Scalene triangle!!!")
+};
+
+
+
+/* 
+6. Find the a number is present in given range
+*/
+
