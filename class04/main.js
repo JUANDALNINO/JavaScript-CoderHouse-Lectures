@@ -104,10 +104,8 @@ let resta = (a, b) => {  // La flecha va después de los parámetros y reemplaza
 resta (10, 20);
 
 //Si es una función de una sola línea con retorno podemos evitar escribir el cuerpo.
-
 let multiplicacion = (a, b) => a * b;
 // => Ahorrando las llaves y el return.
-
 multiplicacion(3, 4);
 
 
