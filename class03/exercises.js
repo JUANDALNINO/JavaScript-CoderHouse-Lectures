@@ -59,7 +59,7 @@ numbers10to20();
 
 
 function numbers10to10() {
-    for(let i=10; i<=100; i+10) {
+    for(let i=10; i<=100; i+=10) {
         console.log(i);
     }
 }

@@ -1,7 +1,34 @@
 // Condicionales
+// Tomar decisiones = el código toma la decision => IA
+
+/* 1. => Preguntarse ¿Tengo 100 millones? => La pregunta, es la condición
+   2. => Si o NO => Las respuestas alternativas. => solo hay dos opciones.
+   3. => Los caminos = SI = Me puedo comprar una casa
+                     = NO = Me quedo con el apto.
+*/
 
 // if
 /*
+1. if => la pregunta / la condición
+2. true => SI => se cumple la condición = realizar unas instrucciones
+3. false => NO => no se cumple = realizar otras condiciones
+
+EJ:
+1. 10.000 me alcanzar para comprar qué?
+2. true = puedes comprar papas y gaseosa
+3. false = solo puedes comprar unas papas
+
+Example:
+let question = Number(prompt("Please introduce a number"));
+if (question >= 9000) {
+    alert("Your cash reach for a chips and soda")
+} else {
+    alert("Sorry, your cash don't reach")
+} 
+alert("Continue the program");
+
+
+
 if (true) { // => si (condicion)
     console.log("Hello"); // => bloque de código a ejectuar - las instrucciones
 }; 
@@ -24,6 +51,8 @@ else (datoUsuario === "Jeje") {
     return "Heloo";
 };
 */
+
+
 
 var condicion = 1 == "1";
 condicion;
