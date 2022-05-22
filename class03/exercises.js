@@ -35,3 +35,32 @@ let highTriangle = Number(prompt("Write the high:"));
 let areaTriangle = (baseTriangle * highTriangle) / 2;
 
 alert("The area of your triangle is: " + areaTriangle);
+
+
+
+
+// EXERCISES OF CICLES:
+// 1. Write a JS code to print numbers from 1 to 10
+
+function printNumbers() {
+    for (let i = 1; i <= 10; i++) {
+        console.log(i);
+    }
+}
+printNumbers();
+
+
+function numbers10to20() {
+    for(let i=10; i<=20; i++) {
+        console.log(i);
+    }
+}
+numbers10to20();
+
+
+function numbers10to10() {
+    for(let i=10; i<=100; i+10) {
+        console.log(i);
+    }
+}
+numbers10to10();
