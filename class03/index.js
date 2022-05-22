@@ -1,10 +1,17 @@
 
 // CICLOS
+// => Bucle, estructura repetitiva:
+// Repetira una o varias instrucciones mientras las condiciones sean cumplidas
+// Se repetira cuando cumpla las condiciones => Hay que tenerle límite porque puede entrar en bucle infinito
+// Cuando no se cumple, termina el ciclo
+
 
 // Imprimir los numeros del 1 al 10:
 // Conocer el inicio y el fin => numero de veces específicas
 // var => conteo del ciclo
 // var => finalizacion
+
+
 
 //   1. FOR
 /*
@@ -12,6 +19,24 @@ for(desde; hasta; actualización) {
     … //lo que se escriba acá se ejecutará mientras dure el ciclo
    }
 */
+// 
+for (let i = 1; i <= 30; i++) {
+  console.log(i)
+}
+
+// El bucle for se puede entender con un el condicional if =>
+let a = 0;
+if (a < 3) {
+  console.log(i);
+  i++;
+} if (a < 3) {
+  console.log(i);
+  i++;
+} if (a < 3) {
+  console.log(i);
+  i++;
+};
+
 
 
 for (let i = 1; i <= 10; i++) {
@@ -63,6 +88,17 @@ for (let linea = 1; linea <= 8; linea++) {
 
 
 // 2. WHILE
+/* while (condicion) {
+  // codigo
+}
+*/
+
+let i = 0;
+while (i <= 3) {
+  console.log(i);
+  i++;
+}
+
 
 let i = 1;
 while (i <= 10)
@@ -85,6 +121,23 @@ while (r <= 10) {
     console.log(r);
     r+=2;
 }
+
+
+// 3. DO WHILE
+// Siempre se va ejectuar una vez al inicio
+// Do = Hacer / While = Mientras que...
+/*
+do {
+  // codigo
+} while (condition);
+*/
+
+let i = 0;
+do {
+  alert (i);
+  i++;
+} while (i < 3);
+
 
 
 // Exercise 2
