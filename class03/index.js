@@ -1,7 +1,7 @@
 
 // CICLOS
 // => Bucle, estructura repetitiva:
-// Repetira una o varias instrucciones mientras las condiciones sean cumplidas
+// Repetira una o varias instrucciones mientras las condiciones sean cumplidas => repetir código
 // Se repetira cuando cumpla las condiciones => Hay que tenerle límite porque puede entrar en bucle infinito
 // Cuando no se cumple, termina el ciclo
 
@@ -11,6 +11,16 @@
 // var => conteo del ciclo
 // var => finalizacion
 
+/*
+Bucles determinados => For
+  => Tiene determinado las veces de repetición => sabemos la cantidad de veces que se repetiran
+Bucles indeterminados => While / Do While
+  => No sabemos cuantas veces se repetirá
+  = While => mientras
+
+=> Si es true entra el codigo
+=> Si esl false no entra y continúa con el siguiente codigo
+*/
 
 
 //   1. FOR
@@ -88,10 +98,26 @@ for (let linea = 1; linea <= 8; linea++) {
 
 
 // 2. WHILE
-/* while (condicion) {
-  // codigo
-}
+/* 
+  while (condicion) {
+    // codigo a repetir mientras la condicion del bucle sea cierta
+  }
 */
+
+
+// EXAMPLE PILDORAS INFORMATICAS:
+// Imprimir los meses del año que están en un array
+let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+let counter = 0;
+
+while(counter < meses.length) {
+  alert(meses[counter]);
+  counter++;
+}
+
+
+
 
 let i = 0;
 while (i <= 3) {
