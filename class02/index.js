@@ -244,3 +244,30 @@ if (side1 == side2 && side1 == side3) {
 6. Find the a number is present in given range
 */
 
+
+
+// parseInt() => cambiar a numero entero
+// Ejercicio calculadora:
+let num1 = Number(prompt("Please introduce the first number =>"));
+let num2 = Number(prompt("Please introduce the second number =>"));
+
+if(isNaN(num1) && isNaN(num2)) {
+    let operation = prompt("What operation do you want to do? suma/resta/division/multiplicacion");
+
+    if(operation === "suma") {
+        alert("Your result of " + num1 + " + " + num2 + " = " + (parseInt(num1)+parseInt(num2)));
+    }
+    else if(operation === "resta") {
+        alert("Your result of " + num1 + " - " + num2 + " = " + (parseInt(num1)-parseInt(num2)));
+    }
+    else if(operation === "division") {
+        alert("Your result of " + num1 + " / " + num2 + " = " + (parseInt(num1)/parseInt(num2)));
+    }
+    else if(operation === "multiplicacion") {
+        alert("Your result of " + num1 + " * " + num2 + " = " + (parseInt(num1)*parseInt(num2)));
+    }
+}
+else{
+    alert("Only works with numbers")
+}
+
