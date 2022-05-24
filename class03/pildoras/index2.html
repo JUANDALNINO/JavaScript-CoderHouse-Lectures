@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> 
+        // GAME ADIVINATION:
+        let aleatorio = Math.round(Math.random()*100);
+        
+        let miNum = 0;
+        let intents = 0;
+        
+        
+        do {
+          miNum = Number(prompt("Write a number between 0 and 100"));
+        
+          if(aleatorio > miNum) {
+            document.write("More big" + "<br/>");
+          }
+           
+          if(aleatorio < miNum) {
+            document.write("More low" + "<br/>");
+          }
+          intents++;
+        
+        } while(aleatorio != miNum);
+        
+        document.write("You win!! My number is " + aleatorio + " - You're needed " + intents + " intents");
+            </script>
+</head>
+<body>
+</body>
+</html>

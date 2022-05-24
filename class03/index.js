@@ -28,8 +28,20 @@ Bucles indeterminados => While / Do While
 for(desde; hasta; actualización) {
     … //lo que se escriba acá se ejecutará mientras dure el ciclo
    }
+
+  
+for(inicio; condición; incremente o decremento) {
+  codigo a repetir mientras la condición sea true;
+}
 */
-// 
+
+// En el ciclo for conocemos previamente cuántas veces se va a ejecutar el código
+
+
+
+
+
+/* - - - - - - - - -*/
 for (let i = 1; i <= 30; i++) {
   console.log(i)
 }
@@ -158,6 +170,269 @@ do {
 } while (condition);
 */
 
+
+// GAME ADIVINATION:
+
+let aleatorio = Math.round(Math.random()*100);
+
+let miNum = 0;
+let intentos = 0;
+
+adivinador();
+
+function adivinador() {
+  do {
+    miNum = Number(prompt("Adivina un número del 0 al 100"));
+  
+    if(aleatorio > miNum) {
+      alert("Más grande");
+    }
+    
+    if(aleatorio < miNum) {
+      alert("Más pequeño");
+    }
+    intentos++;
+  
+  } while(aleatorio != miNum);
+  
+  alert("Haz ganado!! El número es " + aleatorio + " - Lo has encontrado en " + intentos + " intentos");
+}
+
+
+
+
+// Simulador => Calcular pagos en cuotas sobre un monto determinado.
+// Necesita tener => condicionales, ciclos y funciones
+
+/*
+- Pedir el monto total
+- Pedir el n° de cuotas
+- N° de cuotas + valor de cada cuota => sobre el monto determinado.
+    => 6 cuotas de 100.000 c/u => del monto total 600.000
+*/
+
+calcularCuotas();
+
+function calcularCuotas() {
+    let montoTotal = Number(prompt("¿Cuál es el total que desea diferir?"));
+    let cuotas = Number(prompt("¿A cuántas cuotas desea diferir " + montoTotal + " ?"));
+
+    alert("El total de " + montoTotal + " diferido en " + cuotas + " es de " + (montoTotal / cuotas));
+};
+
+
+
+
+// Simulador => Pago de servicios:
+/*
+- Deseas pagar un servicio?
+    -> Si = continua
+    -> No = Fin del proceso
+-> Si => Elegir cuál servicio:
+        => Agua
+        => Energía
+        => Gas
+            -> Sacar costo a pagar random => El saldo total es de $ USD + Continuar
+-> Preguntar con cuánto pagas?
+    -> Si es mayor debe dar devueltas
+    -> Si es menor debe ingresar más dinero
+-> Al recibir el total, mostrar mensaje de pago exitoso y las devueltas (Si las hay)
+*/
+
+let aleNum =  Math.round(Math.random()*100);
+
+iniciarMenu();
+
+function iniciarMenu() {
+
+    let opcion = 0;
+    while(opcion !== 4) {
+        opcion = Number(prompt(`¿Qué servicio deseas pagar? 1. Agua - 2. Energia - 3. Gas - 4. Ninguno`));
+     
+        switch(opcion) {
+            case 1: {
+                pagoAgua();
+                break;
+            }
+            case 2: {
+                pagoEnergia();
+                break;
+            }
+            case 3: {
+                pagoGas();
+                break;
+            }
+            case 4: {
+                alert("Gracias por usar nuestros servicios");
+                break;
+            }
+            default: {
+                alert("Opcion Invalida");
+                break;
+            }
+        }
+    }
+}
+
+
+function pagoAgua() {
+    cobrar(aleNum);
+    alert("Gracias por usar nuestros servicios")
+}
+
+function pagoEnergia() {
+    cobrar(aleNum);
+    alert("Gracias por usar nuestros servicios")
+}
+
+function pagoGas() {
+    cobrar(aleNum);
+    alert("Gracias por usar nuestros servicios")
+}
+
+
+function cobrar(valorDelProducto) {
+    let dineroIngresado = 0;
+
+    while(dineroIngresado < valorDelProducto) {
+        dineroIngresado += Number(prompt("El valor de su compra es " + valorDelProducto + " USD " + "Ingrese su dinero"));
+    }
+
+    alert("Su cambio es: " + (dineroIngresado - valorDelProducto) + " USD")
+}
+
+
+
+
+/*
+iniciarMenu();
+
+function iniciarMenu() {
+    let servicio = 0;
+    while(servicio !== 4) {
+        servicio = Number(prompt(`¿Qué servicio deseas pagar? 1. Agua - 2. Energia - 3. Gas`));
+
+        switch(servicio) {
+            case 1: {
+                pagoAgua();
+                break;
+            }
+            case 2: {
+                pagoEnergia();
+                break;
+            }
+            case 3: {
+                pagoGas();
+                break;
+            }
+            case 4: {
+                alert("Gracias por usar nuestros servicios");
+                break;
+            }
+            default:
+                {
+                    alert("Introduce uno de los servicios");
+                    break;
+                }
+        }
+    }
+}
+
+let aleNum = Math.round(Math.random()*100);
+
+function pagoAgua() {
+    costoPago(aleNum);
+    alert("Gracias por utilizar nuestros servicios.");
+}
+
+function pagoEnergia() {
+    costoPago(aleNum);
+    alert("Gracias por utilizar nuestros servicios.");
+}
+
+function pagoGas() {
+    costoPago(aleNum);
+    alert("Gracias por utilizar nuestros servicios.");
+}
+
+function costoPago(aleNum) {
+    let ingresado = 0;
+
+    while(ingresado < aleNum) {
+        ingresado += Number(prompt(`El saldo total a pagar es de: ${aleNum} USD
+        Ingrese más dinero:`))
+    }
+
+    alert(`Su cambio es: ${ingresado-aleNum}`);
+}
+
+*/
+
+
+/*
+let costo = Math.round(Math.random()*100);
+let valorIngresado = 0;
+let inicio = "";
+
+iniciarMenu();
+
+function iniciarMenu() {
+
+    while {
+        inicio = prompt("Bienvenido. ¿Deseas pagar un servicio?", "Escribe: si o no");
+    
+        if(inicio === "si") {
+            let opcion = prompt("¿Qué servicio deseas pagar?", "agua, energia o gas");
+             
+            switch(opcion) {
+                case "agua": {
+                    pagoAgua();
+                    break;
+                }
+                case "energia": {
+                    pagoEnergia();
+                    break;
+                }
+                case "gas": {
+                    pagoGas();
+                    break;
+                }
+                default: {
+                    alert("Opcion invalida");
+                    break;
+                }
+            }
+        }
+
+    }   
+}
+
+
+
+if(opcion === "agua" || opcion === "energia" || opcion === "gas") {
+    alert("El saldo total a pagar es de: " + costo + " USD");
+}
+
+valorIngresado = Number(prompt("¿Con cuánto deseas pagar?", "Solo introduce números**"));
+    if(valorIngresado > costo) {
+        alert("Tu pago ha sido exitoso." + " Tus vueltas son: " + (valorIngresado-costo) + " USD")
+    }
+        while(valorIngresado < costo) {
+            valorIngresado = Number(prompt("Por favor ingresa más dinero. Te hace falta: " + (costo - valorIngresado) + " USD"));
+            valorIngresado++;
+        }
+    
+    if(valorIngresado === costo) {
+        alert("Tu pago ha sido exitoso.")  
+    }
+}
+} 
+while(inicio === "no") {
+alert("Gracias por elegir nuestros servicios. Hasta pronto");
+*/
+
+
+/* - - - - - - - */
 let i = 0;
 do {
   alert (i);
