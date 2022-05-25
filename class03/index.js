@@ -66,6 +66,30 @@ for (let i = 1; i <= 10; i++) {
 10
 */
 
+// Bucle for
+// Para arrays => leer, llenar
+// 1 al 10
+for (let i = 0; i <= 10; i++) { // i++ => Incrementa
+  alert(i);
+}
+
+// 10 al 0
+for (let i = 10; i > 0; i--) { // i-- => Decrementa
+  alert(i);
+}
+
+// Saludar
+for (let i = 1; i <= 10; i++) {
+  alert("Saludo " + i);
+}
+
+
+let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+for (let i = 0; i < meses.length; i++) {
+  console.log(meses[i])
+}
+
 
 // Pedirle el dato al usuario:
 let dataUser = Number(prompt("Write a number"));
@@ -149,20 +173,27 @@ while (r <= 10) {
 }
 
 
+
 // 3. DO WHILE
-// Siempre se va ejectuar una vez al inicio
+// Siempre se va ejectuar una vez al inicio = porque la condición viene después
 // Do = Hacer / While = Mientras que...
 /*
 do {
-  // codigo
+  // codigo a repetir mientras se cumpla la condicion
 } while (condition);
 */
+
+let aleatorio = Math.random(); // Aleatorio entre 0 y 1;
+let aleatorio = Math.random() * 100;
+let aleatorio = Math.round(Math.random() * 100);
+
 
 let i = 0;
 do {
   alert (i);
   i++;
 } while (i < 3);
+
 
 
 
