@@ -19,6 +19,7 @@ hi ();
 
 // Function 03 con PARAMETROS: => recibe info y opera la info.
 function sumar (a, b) {
+
     alert(`La suma es ${a + b}`);
 };
 
@@ -109,3 +110,24 @@ let multiplicacion = (a, b) => a * b;
 multiplicacion(3, 4);
 
 
+
+
+/* --------------------> PILDORAS <--------------------------*/
+// Instrucciones una primera vez => Se memorizan para no tener que repetir código
+// El codigo es un empleado y debe ser llamado por el jefe quien le da ordenes
+function nombreDeLaFuncion() {
+    // Codigo a ejectutar
+}
+
+// En otro punto se llama la función
+nombreDeLaFuncion(); // => Deben llamarse para ser ejecutadas
+
+    function diaDeHoy() { // => La tarea que debe hacer
+        let today = new Date(); // => Nueva var con la fecha
+        alert("La fecha de hoy es " + today);
+        console.log(today.toDateString());
+    }
+
+    diaDeHoy(); // => Se llama la funcion
+
+    

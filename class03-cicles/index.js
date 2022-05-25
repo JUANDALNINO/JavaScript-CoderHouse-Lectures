@@ -81,12 +81,12 @@ for (let i = 1; i <= 10; i++) {
 // Bucle for
 // Para arrays => leer, llenar
 // 1 al 10
-for (let i = 0; i <= 10; i++) { // i++ => Incrementa
+for (let i = 0; i <= 10; i++) { // i++ => Incrementa en 1
   alert(i);
 }
 
 // 10 al 0
-for (let i = 10; i > 0; i--) { // i-- => Decrementa
+for (let i = 10; i > 0; i--) { // i-- => Decrementa en 1
   alert(i);
 }
 
@@ -95,12 +95,33 @@ for (let i = 1; i <= 10; i++) {
   alert("Saludo " + i);
 }
 
-
+// Leer array
 let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
 for (let i = 0; i < meses.length; i++) {
   console.log(meses[i])
 }
+
+
+// Array indeterminado
+let trabajadores = new Array();
+let persona = "";
+let contador = 0;
+
+// Rellenar array 
+while (persona != "salir") {
+  persona = prompt("Introduce trabajador");
+  trabajadores[contador] = persona;
+  contador++;
+}
+// Método POP => eliminar la ultima posicion del array
+trabajadores.pop();
+
+for (let i = 0; i < trabajadores.length; i++) {
+  console.log(trabajadores[i]);
+}
+
+
 
 
 // Pedirle el dato al usuario:
