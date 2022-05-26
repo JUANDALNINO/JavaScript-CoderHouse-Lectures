@@ -63,12 +63,155 @@ misNumeros.unshift(2000);
     3. Imprimir el array
 */
 
-funNumbers();
-let numbers = [];
 
-function funNumbers() {
-    while(numbers < 5) {
-        numbers = Number(prompt("Ingrese un número"));
-        console.log(numbers);
+// For teacher
+numeroUsuario = [];
+for(let i = 0; i < 5; i++) {
+    let numero = Number(prompt("Write a number"));
+    numeroUsuario.push(numero);
+}
+console.log("Numeros del usuario" + numeroUsuario);
+
+
+// POP => Elimina el ultimo elemento
+misNumeros.pop();
+
+// SHIFT => Elimina el primer elemento
+misNumeros.shift();
+
+// SPLICE => eliminar uno o varios indicados 
+// => 2 parámetros  = 1. indice donde se ubica   - 2. Cantidad desde esa posicion a la derecha
+misNumeros.splice(1,1);
+
+// JOIN => junta los elementos del array en un solo string separados por el valor que le pasamos por parámetro:
+misNumeros.join(", ");
+// => Se pueden almacenar en una variable:
+let allNumbers = misNumeros.join(", ");
+
+// CONCAT => Une dos arrays en uno nuevo
+const misNumeros = [1,2,3,4,5,6,7,8,9,10];
+const misLetras = ["a","b","c","d","e"];
+
+// Array nuevo
+let concat = misNumeros.concat(misLetras);
+
+
+// SLICE => Devuelve una copia del array en otro array => fragmento == Sin modificar el array original
+// Parámetros => posicion 1 a posicion 2 del indice:
+const slice = misNumeros.slice(2, 4);
+
+
+// ARRAY DE OBJETOS:
+const productos = [
+    {
+        id: 1,
+        name: "milk",
+        price: 2000,
+    },
+    {
+        id:2,
+        name: "beer",
+        price: 5000,
+    },
+    {
+        id:3,
+        name: "bread",
+        price: 400,
+    }
+]
+
+    // Recorrerlo:
+    for(let i = 0; i < productos; i++) {
+        alert(productos[i]);
+    }
+
+    // FOR OF: => recorrer por cada elemento del array
+    console.log("Recorrer con for of");
+    for(let producto of productos) {
+        console.log(producto.name);
+        console.log(producto.id);
+    }
+
+
+
+
+
+/* ----------------------=> Exercise:
+    1. Crear objetos
+    2. Crear array con los objetos previos
+*/
+
+// Crear objetos
+let objeto1 = {
+    id: 1,
+    producto: "arroz",
+    precio: 2500,
+}
+
+// Puedo crearlos en los arrays
+let array = [objeto1, 
+    {
+        id:2,
+        producto: "carne",
+        precio: 9900,
+    }
+];
+
+// Agregar objetos con push:
+array.push(
+    {
+        id:3,
+        producto: "leche",
+        precio: 5000,
+    },
+    {
+        id:4,
+        producto: "pollo",
+        precio: 12000,
+    }
+);
+
+
+// => Recorrer el array con FOR OF => para cada elemento del objeto:
+for (let product of array) {
+    console.log(product.id);
+    console.log(product.producto);
+  }
+/* IMPRIME =>
+    1
+    'arroz'
+    2
+    'carne'
+    3
+    'leche'
+    4
+    'pollo'
+*/
+
+// => EJEMPLO CON OBJETOS + ARRAY
+class Product {
+    constructor(id, name, price, withIva) {
+        this.id = id;
+        this.name = name;
+        this.price = parseFloat(price);
+        this.withIva = price * 1.21;
     }
 }
+
+
+// Array para guardar objetos en la clase anterior creada:
+const products = []; // Array vacío
+
+// Creación de cada objeto dentro del array con las indicaciones creadas en la clase constructora
+products.push(new Product(1001, "rice", 4900));
+products.push(new Product(1050, "computer", 1500000));
+products.push(new Product(1010, "milk", 6900));
+products.push(new Product(1002, "pottato", 3900));
+products.push(new Product(1060, "coke", 1900));
+
+// Iterar el array de todos los objetos para cambiar el precio + el iva;
+for (let productWithIva of products) {
+    productWithIva.additionIva();
+}
+
+
