@@ -101,6 +101,39 @@ let concat = misNumeros.concat(misLetras);
 const slice = misNumeros.slice(2, 4);
 
 
+// INDEX OF => Obtener indice de un elemento en el array
+// Si el elemento no existe, retorna -1 => retorna el indice
+const indice = misNumeros.indexOf(5);
+console.log(misNumeros.indexOf(100));
+
+// Ejemplo buscando info. del usuario:
+    let buscarNum = Number(prompt("Introduce a number"));
+    const indice = misNumeros.indexOf(buscarNum);
+        if (indice === -1) {
+            alert("Your number not exist");
+        } else {
+            alert("Your number is here and the index is: " + indice);
+        }
+
+
+// INCLUDES => Igual que index of. La diferencia es que devuelve true or false
+const includes = misNumeros.includes(5);
+console.log(misNumeros.includes(100));
+    // Ejemplo buscando info. del usuario:
+    let buscarNum = Number(prompt("Introduce a number"));
+    const indice = misNumeros.includes(buscarNum);
+        if (indice === false) {
+            alert("Your number not exist");
+        } else {
+            alert("Your number is here and the index is: " + indice);
+        }
+
+
+// REVERSE => Modifica el array - invierte el orden de los elementos del array
+const misNumeros = [1,2,3,4,5,6,7,8,9,10];
+misNumeros.reverse();
+console.log(misNumeros);
+
 // ARRAY DE OBJETOS:
 const productos = [
     {
