@@ -1,6 +1,7 @@
 
 
 // Objetos => coleccion de datos
+// Coleccion de datos en variables
 // => Crear objeto
 const person = { // => Nombre objeto
     name: "Juan David",   // => Propeidades
