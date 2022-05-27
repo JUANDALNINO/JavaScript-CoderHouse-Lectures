@@ -134,6 +134,7 @@ const misNumeros = [1,2,3,4,5,6,7,8,9,10];
 misNumeros.reverse();
 console.log(misNumeros);
 
+
 // ARRAY DE OBJETOS:
 const productos = [
     {
@@ -248,3 +249,57 @@ for (let productWithIva of products) {
 }
 
 
+
+// EXERCISE: 
+/*
+    Funcion que permita ingresar usuarios en un sistema:
+        1. Crear usuarios => Array con obejetos = usuario, nombre y contraseña
+            -> Clase constructora
+        2. Variables para insertar los datos y almacenarlos
+*/
+
+// Objeto constructor
+class Users {
+    constructor(user, name, password) {
+        this.user = user;
+        this.name = name;
+        this.password = password;
+    }
+}
+
+// Array para guardar los objetos dentro:
+const usersArray = [];
+
+// Crear cada objeto nuevo por el usuario:
+let nameLet = prompt("Please introduce your name");
+let userLet = prompt("Please introduce your user");
+let passwordLet = prompt("Please introduce your password");
+
+let newUser = usersArray.push(new Users(userLet, nameLet, passwordLet));
+
+
+// El usuario ingresa un nombre y se revisa en el array si existe:
+    let checkUsers = prompt("Introduce your name");
+
+    let index = usersArray.indexOf(checkUsers);
+        if(index === -1) {
+            alert("Your name doesn't exist in our data base");
+        } else {
+            alert("Your name exist and the index is: " + index);
+        }
+
+
+
+
+// SUMAR LOS NUMEROS DE UN ARRAY:
+const numeros = [1,2,3,4,5,6,7,8,9,10];
+
+let suma = 0;
+
+for (let i = 0; i < numeros.length; i++) {
+    suma += numeros[i];
+}
+
+
+
+// CHALLENGE WITH ARRAYS + OBJETOS:
