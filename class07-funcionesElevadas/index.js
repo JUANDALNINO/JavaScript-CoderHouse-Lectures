@@ -185,10 +185,18 @@ function eliminarUsuario() {
     let esta = usuarios.some( (usuario) => usuario.id === id);
 
     if(esta) {
+        let soloIds = usuarios.map( (usuario) => usuario.id)
+        
+        let indice = soloIds.indexOf(id);
 
+        usuarios.splice(indice,1);
+        alert("Usuario eliminado");
+
+        console.log("Eliminado");
+        console.table(usuarios);
+
+        
     } else {
         alert("Usuario no encontrado")
     }
 }
-
-// 1:51 MIN
