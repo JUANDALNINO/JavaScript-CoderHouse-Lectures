@@ -1,0 +1,7 @@
+
+
+IDEAS PARA PROYECTO FINAL:
+    1. Simulador de reservas en hotel
+    2. Simulador de tiquetes de vuelo
+    3. Alquiler de vehiculos
+    4. Equipos de futbol
