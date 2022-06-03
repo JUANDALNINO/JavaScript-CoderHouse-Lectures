@@ -1,3 +1,6 @@
+COPIAR Y PEGAR EN DOCUMENTO JS PARA VER
+
+/*
 DOM
     => Usar todos los documentos en HTML en JS
     => Objetos = métodos y propiedades
@@ -7,5 +10,40 @@ DOM
 h1 => heading más importante
 
 
+
 ---> Arbol de nodos
         Ramas => padres e hijos
+
+*/
+
+//   ACCESO AL DOM
+
+//     document. => es un objeto global al cual accedo a un nodo
+// Body = accedo a la etiqueta body
+    const nodoPrincipal = document.body; // => Esto es un objeto
+    console.log(nodoPrincipal);
+
+
+// Métodos para acceder a los Nodos empleando Document:
+    // 1. getElementById => recibe un string = el id que se le colocó a la etiqueta
+    // Devuelve el primero que encuentre con el id => es por esto que los id no deben estar repetidos
+    const nodoDiv = document.getElementById("container");
+    console.log(nodoDiv);
+
+    // 2. getElementsByClassName => conjunto de elementos de la estructura HTML con clase
+    // Devuelve todos los elementos con class
+    const paises = document.getElementsByClassName("paises");
+    console.log(paises);
+
+    // 3. getElementsByTagName => Nombre de etiqueta como identificación
+        // Es la menos específica porque pueden haber varios
+    const h1 = document.getElementsByTagName("h1");
+    console.log(h1);
+
+
+    // Recorrer una colección:
+    console.log("Todos los h1");
+    for (let titles of h1) {
+        console.log(titles)
+    }
+

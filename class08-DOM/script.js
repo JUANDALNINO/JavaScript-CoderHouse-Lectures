@@ -1,22 +1,28 @@
-/*
-DOM
-    => Usar todos los documentos en HTML en JS
-    => Objetos = métodos y propiedades
-
-    => Convertir un documento HTML en un módelo de Objetos para interactuar
-
-h1 => heading más importante
 
 
+//   MODIFICAR NODOS => cambiar el contenido
 
----> Arbol de nodos
-        Ramas => padres e hijos
+// Exercise:
+    // Modificar el contenido en html
+    // Pedir nombre
+    let name = prompt("Ingrese su nombre");
 
-*/
+    // Mostrar en h1 => elemento en la posición [0]
+    const titH1 = document.getElementsByTagName("h1")[0];
 
-//     document. => es un objeto global al cual accedo a un nodo
-// Body = accedo a la etiqueta body
-    const nodoPrincipal = document.body; // => Esto es un objeto
-    console.log(nodoPrincipal);
+// 1. innerText => Modificar el nodo de texto. Acceder o modificar el contenido del DOM
+    // Imprimir en el documento el nombre
+    titH1.innerText = `!Bienvenido, ${name}!`;
 
-// min => 20
+
+// 2. innerHTML
+// Sin [] => porque es único
+    const div = document.getElementById("miContenido");
+    div.innerHTML = `<b>Esto es negrita</b><br>
+                        Esto no es negrita<br>
+                        <i>Esto es italica</i>
+                        <p>Esto es un parrafo</p>
+                        ${name}`;
+
+
+                        
