@@ -136,3 +136,111 @@ while (condicion); // Condicion para que se siga repitiendo una y otra vez
         i++
     }
     while (i<=25);
+
+
+
+
+// Practice:
+
+//  The If Statement
+// 01. Mes de vacaciones:
+var month = readLine()
+//your code goes here
+if(month === "August") {
+    console.log("vacation")
+}
+
+
+// Declaracion if else:
+// 02. Record mundial:
+var height = parseFloat(readLine(), 10)
+//your goes code here
+if(height>2.45) {
+    console.log("new record")
+}
+else {
+    console.log("not this time")
+}
+
+
+// Declaracion else if:
+// 03. Resultados de los examenes
+var score = parseInt(readLine(), 10)
+/*
+88 and above => excellent
+40-87   => good
+0-39 => fail
+*/
+// your code goes here
+if(score>=88) {
+    console.log("excellent")
+}
+else if(score>=40 && score<=87) {
+    console.log("good")
+}
+else if (score<=39) {
+    console.log("fail")
+}
+
+
+// Declaracion Switch:
+// 04. modo oscuro:
+function main() {
+    var themeNumber = parseInt(readLine(), 10)
+    /*
+    1 - Light
+    2 - Dark
+    3 - Nocturne
+    4 - Terminal
+    5 - Indigo
+    */
+    // Your code here
+    switch(themeNumber) {
+        case 1:
+            console.log("Light");
+            break;
+        case 2:
+            console.log("Dark");
+            break;
+        case 3:
+            console.log("Nocturne");
+            break;
+        case 4:
+            console.log("Terminal");
+            break;
+        case 5:
+            console.log("Indigo");
+            break;
+    }
+}
+
+
+// Bucle for:
+// 05. Repetir y repetir:
+for(let i = 0; i<3; i++) {
+    console.log(expression);
+}
+
+
+// Bucle While
+// 06. Time's up:
+function main() {
+    var seconds = parseInt(readLine(), 10)
+    // Your code here
+    while(seconds>=0) {
+        console.log(seconds);
+        seconds--;
+    }
+}
+
+
+// Bucle con break and continue:
+// 07. Omitiendo el 13
+var countOfRooms = 15;
+// Your code here
+for(let i = 1; i<=16; i++) {
+    if(i == 13) {
+        continue;
+    }
+    console.log(i);
+}
