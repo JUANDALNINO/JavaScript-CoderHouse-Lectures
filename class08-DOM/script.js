@@ -1,3 +1,4 @@
+// <---------------------------------------------------------------------------------------------------------------------->
 // Sistema crud usuarios
 // Create - Read - Update - Delete
 // Admin. de usuarios:
@@ -27,6 +28,7 @@ let usuarios = [usuario1, usuario2, usuario3, usuario4, usuario5];
 inicializarAplicacion();
 // Funcion mostrar menu
 mostrarMenu();
+
 
 function mostrarMenu() {
     let opcion = 0;
@@ -81,6 +83,8 @@ function mostrarMenu() {
         }
     }
 }
+
+
 
 
 // Funciones de usuario:
@@ -198,3 +202,19 @@ function inicializarAplicacion() {
     title.innerText = `Sistema de Gestión de Usuarios`;
 }
 
+
+
+// Plantilla de texto
+const usuario = agregarUsuario();
+mostrarUsuario(usuario);
+
+function mostrarUsuario(usuario) {
+    const myDiv = document.createElement("div");
+    myDiv.innerHTML = `<div><b>${usuario.nombre}</b></div>
+    <p>${usuario.apellido}</p>`;
+
+    document.body.appendChild(myDiv);
+}
+
+
+// <---------------------------------------------------------------------------------------------------------------------->

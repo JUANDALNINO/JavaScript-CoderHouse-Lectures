@@ -98,3 +98,110 @@ h1 => heading más importante
 
 
 //      AGREGAR O QUITAR NODOS
+
+// 1. crear elementos 
+// se utiliza la función document.createElement(), y se debe indicar el nombre de etiqueta HTML que representará ese elemento.
+
+    // 1. Crear nodo de tipo Elemento, etiqueta p
+    let parrafo = document.createElement("p");
+
+    // 2. Insertar HTML interno
+    parrafo.innerHTML = "<h2>¡Hola Coder!</h2>"; 
+
+    // 3. Añadir el nodo Element como hijo de body
+    document.body.append(parrafo);
+
+
+// Array de mascotas
+const mascotas = ["Pandoro", "Lucas", "Roni", "Tyron", "Simona", "Luna"]
+
+const title = document.getElementsByTagName("h3")[0];
+    title.innerText = "Mascotas";
+
+const elemento = document.createElement("ul");
+    mascotas.forEach( (mascota) => {
+        const nodoLi = document.createElement("li");
+
+        nodoLi.innerText = mascota;
+
+        elemento.appendChild(nodoLi);
+    });
+
+document.body.appendChild(elemento);
+
+
+// 2. Eliminar elementos:
+// Se pueden eliminar nodos existentes y nuevos. El método remove() permite eliminar un nodo seleccionado del DOM:
+
+    let parrafo = document.getElementById("parrafo1");
+    //Elminando el propio elemento
+    parrafo.remove();
+
+    let paises = document.getElementsByClassName("paises");
+    //Eliminando el primer elemento de clase paises
+    paises[0].remove()
+
+
+
+// 2. Obtener datos de los inputs:
+// Accediendo a la propiedad value de cada input seleccionado:
+
+/CODIGO HTML DE REFERENCIA
+  <input id = "nombre" type="text">
+  <input id = "edad"   type="number">
+
+//CODIGO JS
+document.getElementById("nombre").value = "HOMERO";
+document.getElementById("edad").value   = 39;
+
+
+
+
+// Array de mascotas
+const mascotas = ["Pandoro", "Lucas", "Roni", "Tyron", "Simona", "Luna"]
+
+const title = document.getElementsByTagName("h3")[0];
+    title.innerText = "Mascotas";
+
+const elemento = document.createElement("ul");
+    mascotas.forEach( (mascota) => {
+        const nodoLi = document.createElement("li");
+
+        nodoLi.innerText = mascota;
+
+        elemento.appendChild(nodoLi);
+    });
+
+document.body.appendChild(elemento);
+
+
+
+
+// Inputs:
+const nombre = document.getElementById("nombre").value;
+alert(nombre);
+
+const edad = document.getElementById("edad").value;
+alert(edad);
+
+
+
+//Obtenemos el nodo donde vamos a agregar los nuevos elementos
+let padre = document.getElementById("personas");
+//Array con la información a agregar
+let personas = ["HOMERO","MARGE", "BART", "LISA","MAGGIE"];
+//Iteramos el array con for...of
+for (const persona of personas) {
+    //Creamos un nodo <li> y agregamos al padre en cada ciclo
+    let li = document.createElement("li");
+    li.innerHTML = persona
+    padre.appendChild(li);
+}
+
+
+
+
+//     PLANTILLAS DE TEXTO
+// template strings.
+
+
