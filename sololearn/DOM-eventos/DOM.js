@@ -124,3 +124,87 @@ for(let x=0; x<s.length; i++) {
 
 //--------------------------------- 04. Añadiendo y removiendo elementos:
 // A) Creando elementos:
+    // Métodos para crear nuevos nodos:
+
+    // -> Clona un elemento y retorna el nodo resultante el clon:
+        elemento.childNodes()
+
+    // -> Crea un nuevo nodo
+        document.createElement(elemento)
+
+    // -> Crea un nodo de texto
+        document.createTextNode(text);
+
+// Example:
+// 1. Step
+    let node = document.createTextNode("Some text"); // Este codigo crea el nodo pero no lo agrega hasta que se añada al árbol = elemento existente
+
+// 2. Step
+    // -> Añade un nuevo nodo hijo a un elemento como ultimo de sus hijos
+        elemento.appendChild(newNode)
+
+    // -> Insertar node1 antes del node2
+        elemento.insertBefore(node1, node2);
+
+// Example:
+    /*<div id="demo">some content</div>*/
+
+    //Crear un nuevo párrafo:
+    let p = document.createElement("p");
+    let node = document.createTextNode("Some new text");
+    // Agregar el texto al párrafo:
+    p.appendChild(node);
+
+    //En otro elemento:
+    let div = document.getElementById("demo");
+    //Agregar el párrafo nuevo al div:
+    div.appendChild(p);
+
+// Example: Añadir nuevo elemento <li> a lista desordenada con id="list":
+    let el = document.createElement("li");
+    let txt = document.createTextNode("B");
+    el.appendChild(txt);
+    let ul = document.getElementById("list");
+    ul.appendChild(el);
+
+
+// B) Eliminando elementos:
+    // Hay que seleccionar el padre del elemento y utilizar el método:
+        removeChild(node);
+
+//Example:
+        /*<div id="demo">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>*/
+
+    let parent = document.getElementById("demo"); // Padre
+    let child = document.getElementById("p1"); // Hijo
+    parent.removeChild(child); // Borrar hijo p1
+
+// Example: Borrar elemento id="node" ("par" es el padre del elemento):
+    let par = document.getElementById("par");
+    let node = document.getElementById("node");
+    par.removeChild(node);
+
+
+// C) Reemplazando elementos:
+    // Para reemplazar se usa el método:
+        elemento.replaceChild(newNode,oldNode)
+
+// Example:
+    /*<div id="demo">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>*/
+    
+    // new element
+    let p = document.createElement("p");
+    let node = document.createTextNode("New text");
+    p.appendChild(node);
+
+    // Reemplazar elemento
+    let parent = document.getElementById("demo"); // padre
+    let child = document.getElementById("p1"); // Reemplaza el p1 existente
+    parent.removeChild(p, child);
+

@@ -66,6 +66,7 @@ function menuInicial() {
 }
 
 
+
 // Funciones:
     // 1. Agregar nuevo carro:
     function agregarCarroNuevo() {
@@ -83,6 +84,21 @@ function menuInicial() {
 
         alert("Carro creado con éxito");
         console.table(catalogo);
+
+
+    // ----------------------DOM--------------------------
+    // 01. Modificar elementos en el HTML
+    // => 1. Carro nuevo agregado al array 
+    // Al crear carro nuevo aparece en pantalla
+
+        const marcaCarNew = document.getElementById("marcaCarNew");
+        const modeloCarNew = document.getElementById("modeloCarNew");
+        const anioCarNew = document.getElementById("anioCarNew");
+
+        marcaCarNew.innerHTML = marca;
+        modeloCarNew.innerHTML = modelo;
+        anioCarNew.innerHTML = anio;
+
     }
 
     // Funcion de crear ID automaticamente:
@@ -110,5 +126,17 @@ function menuInicial() {
     function buscarCarro() {
         let buscarMarcaCarro = prompt("Ingrese la marca del carro");
 
-        return catalogo.find( (buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase())
+        return catalogo.find( (buscarMarca) => buscarMarca.marca.toLowerCase() == buscarMarcaCarro.toLowerCase());
     }
+
+
+
+// ----------------------DOM--------------------------
+    // 02. Crear elementos en el HTML
+    // => 2. Carro buscado: 
+    // Al buscar un carro este se crea en el html:
+        
+    let carFind = document.createElement("p");
+    let node = document.createTextNode(carroEncontrado);
+
+    carFind.appendChild(node);
