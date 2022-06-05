@@ -49,8 +49,6 @@ function menuInicial() {
             case 3: {
                 let carroEncontrado = buscarCarro();
 
-            //
-
                 console.log("Carros encontrados:");
                 console.table(carroEncontrado);
                 break;
@@ -87,7 +85,7 @@ function menuInicial() {
         alert("Carro creado con éxito");
         console.table(catalogo);
 
-
+//---------------------------
     // ----------------------DOM--------------------------
     // 01. Modificar elementos en el HTML
     // => 1. Carro nuevo agregado al array 
@@ -100,6 +98,7 @@ function menuInicial() {
         marcaCarNew.innerHTML = marca;
         modeloCarNew.innerHTML = modelo;
         anioCarNew.innerHTML = anio;
+// ----------------------------
     }
 
     // Funcion de crear ID automaticamente:
@@ -153,35 +152,9 @@ function menuInicial() {
 
 
 
+
+
 // ----------------------DOM--------------------------
     // 02. Crear elementos en el HTML
-    // => 2. Carro buscado: 
+    // => 3. Carro buscado: 
     // Al buscar un carro este se crea en el html:
-
-    /*
-    let p = document.createElement("p");
-    let node = document.createTextNode("some text");
-
-    p.appendChild(node);
-
-    let carFind = document.getElementById("carFind");
-    carFind.appendChild(p);
-    */
-
-// V.02
-    /*
-    let padre = document.getElementById("carFindUl");
-
-    for (const car of carroEncontrado) {
-        let li = document.createElement("li");
-        li.innerHTML = car;
-        padre.append(li);
-    }
-    */
-
-
-// V.03
-/*let carFinded = carroEncontrado;
-let plantilla = `ID: ${carro.id} - Marca: ${carro.marca} - Modelo: ${carro.modelo} - Año: ${carro.anio}`;*/
-
-
