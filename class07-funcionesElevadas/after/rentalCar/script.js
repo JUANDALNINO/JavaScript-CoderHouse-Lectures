@@ -49,6 +49,8 @@ function menuInicial() {
             case 3: {
                 let carroEncontrado = buscarCarro();
 
+            //
+
                 console.log("Carros encontrados:");
                 console.table(carroEncontrado);
                 break;
@@ -98,7 +100,6 @@ function menuInicial() {
         marcaCarNew.innerHTML = marca;
         modeloCarNew.innerHTML = modelo;
         anioCarNew.innerHTML = anio;
-
     }
 
     // Funcion de crear ID automaticamente:
@@ -119,6 +120,27 @@ function menuInicial() {
         catalogo.forEach( (carro) => {
             console.log(carro.marca + " " + carro.modelo + " " + carro.anio);
         })
+
+//-------------------
+    // ----------------------DOM--------------------------
+        // 02. Crear elementos en el HTML
+        // => 2. Listado de carros disponibles en el Array: 
+        // Lista los carros disponibles en el array:
+
+        for(const carro of catalogo) {
+            let contenedor = document.createElement("div");
+        
+            contenedor.innerHTML = `<h3> ID: ${carro.id}</h3>
+                                    <p> Marca: ${carro.marca} </p>
+                                    <p> Modelo: ${carro.modelo} </p>
+                                    <p> Año: ${carro.anio} </p>`;
+            
+        
+            let listCarFindDiv = document.getElementById("carFindDiv");
+            listCarFindDiv.appendChild(contenedor);
+        }
+//-------------------
+
     }
 
 
@@ -135,8 +157,31 @@ function menuInicial() {
     // 02. Crear elementos en el HTML
     // => 2. Carro buscado: 
     // Al buscar un carro este se crea en el html:
-        
-    let carFind = document.createElement("p");
-    let node = document.createTextNode(carroEncontrado);
 
-    carFind.appendChild(node);
+    /*
+    let p = document.createElement("p");
+    let node = document.createTextNode("some text");
+
+    p.appendChild(node);
+
+    let carFind = document.getElementById("carFind");
+    carFind.appendChild(p);
+    */
+
+// V.02
+    /*
+    let padre = document.getElementById("carFindUl");
+
+    for (const car of carroEncontrado) {
+        let li = document.createElement("li");
+        li.innerHTML = car;
+        padre.append(li);
+    }
+    */
+
+
+// V.03
+/*let carFinded = carroEncontrado;
+let plantilla = `ID: ${carro.id} - Marca: ${carro.marca} - Modelo: ${carro.modelo} - Año: ${carro.anio}`;*/
+
+
