@@ -1,7 +1,6 @@
-EVENTOS:
--> Cuando hay una acción en la página y ocurre algo
-- Controlar las acciones de los usuarios y el comportamiento de la página
 
->> Un evento ocurre en un elemento = handler (manejador)
-    -> En cada evento ejecuta una función asociada al mismo
-
+/* Archivos Js
+    1. vistas.js => interfaz que el usuario va a ver
+    2. Clases => constructor
+    3. Main => 
+*/
