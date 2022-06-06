@@ -24,20 +24,23 @@ let usuario5 = new Usuario(5, "Santiago", "Aguirre");
 let usuarios = [usuario1, usuario2, usuario3, usuario4, usuario5];
 
 
+inicializarApp()
+
 // Funcion iniciar aplicación => DOM
-inicializarAplicacion();
+//inicializarAplicacion();
+
 // Funcion mostrar menu
-mostrarMenu();
+//mostrarMenu();
 
 
 function mostrarMenu() {
     let opcion = 0;
 
-    while(opcion!=10) {
+    while (opcion != 10) {
         opcion = Number(prompt("Seleccione una acción: 1. Agregar Usuario - 2. Eliminar Usuario - 3. Modificar usuario - 4. Listar usuario - 5. Buscar usuario - 6. Filtrar listado - 10. Salir"));
 
-    
-        switch(opcion) {
+
+        switch (opcion) {
             case 1: {
                 agregarUsuario();
                 break;
@@ -56,7 +59,7 @@ function mostrarMenu() {
             }
             case 5: {
                 let encontrado = buscarUsuario();
-                
+
                 if (encontrado) {
                     alert(`El usuario es: ID: ${encontrado.id} - NOMBRE: ${encontrado.nombre} - APELLIDO: ${encontrado.apellido}`)
                 } else {
@@ -104,12 +107,12 @@ function agregarUsuario() {
 
 function getId() {
     // Validar que haya 1 elemento en el array
-    if(usuarios.length === 0) {
+    if (usuarios.length === 0) {
         return 1;
     } else {
         // Conseguir el ultimo id
-    let ultimoId = usuarios[usuarios.length-1];
-    return ultimoId.id+1;
+        let ultimoId = usuarios[usuarios.length - 1];
+        return ultimoId.id + 1;
     }
 }
 
@@ -119,53 +122,60 @@ function getId() {
 // 1. forEach() => por cada uno
 // Itera el array y por cada elemento ejecuta la funcion que se envia como parámetro.
 
-    // Funcion para listar el array:
-    /*
-    function listarUsuarios() {
-        console.log("Listar usuarios:");
+// Funcion para listar el array:
+/*
+function listarUsuarios() {
+    console.log("Listar usuarios:");
 
-        // Iterar el array e imprimir
-        usuarios.forEach( (usuario) => {
-            console.log(usuario.nombre + " " + usuario.apellido);
-        })
-    }
-    */
+    // Iterar el array e imprimir
+    usuarios.forEach( (usuario) => {
+        console.log(usuario.nombre + " " + usuario.apellido);
+    })
+}
+*/
 
-    function listarUsuarios() {
-        const nodoUL = document.createElement("ul");
-        usuarios.forEach( (usuario) => {
-            
-            const nodoLI = document.createElement("li");
-            nodoLI.innerText = `${usuario.nombre} ${usuario.apellido}`;
+function listarUsuarios() {
+    const nodoUL = document.createElement("ul");
+    usuarios.forEach((usuario) => {
 
-            nodoUL.appendChild(nodoLI);
-        });
-        
-        document.body.appendChild(nodoUL);
-    }
+        const nodoLI = document.createElement("li");
+        nodoLI.innerText = `${usuario.nombre} ${usuario.apellido}`;
+
+        nodoUL.appendChild(nodoLI);
+    });
+
+    document.body.appendChild(nodoUL);
+}
 
 
 // 2. find() => recibe una función de comparación por parámetro = retorna el primer elemento que cumpla con esa condición
 
-    // Funcion para buscar usuario:
-    function buscarUsuario() {
-        let idABuscar = Number(prompt("Ingrese el id del usuario:"));
+// Funcion para buscar usuario:
+function buscarUsuario() {
+    let busqueda = prompt("Ingresa nombre o apellido que quieres buscar");
 
-        // Compara la entrada del usuario con el id en el array
-        return usuarios.find( (usuario) => idABuscar === usuario.id);
-    }
+    let encontrados = usuarios.filter( (usuario) => 
+        usuario.nombre.toLowerCase().indexOf(busqueda.toLocaleLowerCase()) !== -1 ||
+        usuario.apellido.toLowerCase().indexOf(busqueda.toLocaleLowerCase()) !== -1);
+
+    /*let idABuscar = Number(prompt("Ingrese el id del usuario:"));
+
+    // Compara la entrada del usuario con el id en el array
+    return usuarios.find((usuario) => idABuscar === usuario.id);
+    */
+}
 
 
 // 3. filter() => recibe una función de comparación y retorna un nuevo array con los elementos que cumplen la condición = si no hay retorna array vacío
 
-    // Función para filtrar usuario:
-    function filtrarListado() {
-        let aBuscar = prompt("Ingrese un texto para buscar");
+// Función para filtrar usuario:
+function filtrarListado() {
+    let aBuscar = prompt("Ingrese un texto para buscar");
 
-        // Compara la entrada del usuario con los strings posibles:
-        return usuarios.filter( (usuario) => usuario.nombre.indexOf(aBuscar) !== -1 || usuario.apellido.indexOf(aBuscar) !== -1
-        )
-    }
+    // Compara la entrada del usuario con los strings posibles:
+    return usuarios.filter((usuario) => usuario.nombre.indexOf(aBuscar) !== -1 || usuario.apellido.indexOf(aBuscar) !== -1
+    )
+}
 
 
 // 4. Some => funciona igual que find() = retorna true or false:
@@ -173,26 +183,27 @@ function eliminarUsuario() {
     let id = Number(prompt("Ingrese el ID que desea borrar"));
 
     //Compara y devuelve true or false
-    let esta = usuarios.some( (usuario) => usuario.id === id);
+    let esta = usuarios.some((usuario) => usuario.id === id);
 
-    if(esta) {
-        let soloIds = usuarios.map( (usuario) => usuario.id)
-        
+    if (esta) {
+        let soloIds = usuarios.map((usuario) => usuario.id)
+
         let indice = soloIds.indexOf(id);
 
-        usuarios.splice(indice,1);
+        usuarios.splice(indice, 1);
         alert("Usuario eliminado");
 
         console.log("Eliminado");
         console.table(usuarios);
 
-        
+
     } else {
         alert("Usuario no encontrado")
     }
 }
 
 
+/*
 // inicializarAplicacion();
 function inicializarAplicacion() {
     let saludo = document.getElementsByTagName("h1")[0];
@@ -215,6 +226,58 @@ function mostrarUsuario(usuario) {
 
     document.body.appendChild(myDiv);
 }
+*/
 
 
 // <---------------------------------------------------------------------------------------------------------------------->
+
+/*
+    Inicializar la App
+    Agregar titulo
+    Agregar Menu
+*/
+
+// Inicializar la App
+function inicializarApp() {
+    crearTitle();
+    crearMenu();
+}
+
+
+// Crear title:
+function crearTitle() {
+    const myTitle = document.createElement("h1");
+    myTitle.innerText = ("Sistema de gestión de usuarios");
+    document.body.appendChild(myTitle);
+}
+
+// Crear Subtitle:
+function crearMenu() {
+    const listaOpciones = ["Listar usuarios", "Agregar Usuario", "Buscar Usuario"];
+
+    listaOpciones.forEach((opcion) => {
+        const btn = document.createElement("button");
+        btn.innerText = opcion;
+
+        switch (opcion) {
+            case "Listar usuarios":
+                btn.onclick = () => {
+                    listarUsuarios();
+                }
+                break;
+            case "Agregar Usuario":
+                btn.onclick = () => {
+                    agregarUsuario();
+                    listarUsuarios();
+                }
+                break;
+            case "Buscar Usuario":
+                btn.onclick = () => {
+                    let encontrados = buscarUsuario();
+                    console.table(encontrados);
+                }
+        }
+
+        document.body.appendChild(btn);
+    })
+}

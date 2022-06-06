@@ -20,5 +20,12 @@ function crearTitle() {
 
 // Crear Subtitle:
 function crearMenu() {
+    const listaOpciones = ["Listar usuarios", "Agregar Usuario", "Buscar Usuario"];
 
+    listaOpciones.forEach( (opcion) => {
+        const btn = document.createElement("button");
+        btn.innerText = opcion;
+
+        document.body.appendChild(btn);
+    })
 }
