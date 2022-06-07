@@ -111,6 +111,27 @@ return (num1+num2+num3) / 3;
 };
 
 
+// Example: - - - - - - - 
+let resultado = 0;
+function sumar(num1, num2) {
+    resultado = num1+num2;
+}
+
+function mostrar(mensaje) {
+    console.log(mensaje);
+}
+
+    // Llamado: => La división del problema en dos funciones 
+    sumar(10,10);
+    mostrar(resultado);
+
+// Para no usar variable previa:
+function sumarTwo(num1, num2) {
+    return num1+num2;
+}
+let resultadoTwo = sumarTwo(10,10);
+
+
 //---------------------------------------------------------
 /* SCOPE: Alcance
     -> Colección de variables, funciones y objetos
@@ -121,6 +142,17 @@ return (num1+num2+num3) / 3;
         => Llaves para cada código específico. Quién modificó el código
         => Es recomendable usar el SCOPE LOCAL
 */
+
+
+// Llamar la función varias veces con un ciclo:
+function name() {
+    alert("Juan");
+}
+
+for (let i = 0; i < 3; i++) {
+    solicitarNombre();
+}
+
 
 
 //-------------------------------------------------------
@@ -151,5 +183,31 @@ executor(function() { // El mismo resultado sin necesidad de declarar la funció
 //---------------------------------------------------------
 /*
 EL CONTEXTO:
-
+    this => tiene scope (global y local)
 */
+
+let usuario = {
+    nombre: "Uriel",
+    apellido: "Hernandez",
+    nombreCompleto: function() {
+        console.log(this.nombre + " " + this.apellido);
+    }
+}
+usuario.nombreCompleto(); //"Uriel Hernandez"
+
+
+
+//------------------------------------------------
+// FUNCIONES FLECHAS: El Nombre se le coloca a la variable:
+const hola = ()=>{}
+
+const suma  = (a, b) => { return a + b }
+//Si es una función de una sola línea con retorno podemos evitar escribir el cuerpo.
+const resta = (a, b) =>  a - b 
+console.log(suma(15,20))
+console.log(resta(20,5))
+
+
+
+// ----------------------------------------------
+// CALL, APPLY AND BIND => Métodos para la variable THIS
