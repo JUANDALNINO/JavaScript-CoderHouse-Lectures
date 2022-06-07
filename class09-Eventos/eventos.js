@@ -34,4 +34,35 @@ function btn3() {
 }
 
 
-// Minute => 58
+//------------------
+// Eventos del Mouse:
+
+// Mouse Over => 
+const btn4 = document.getElementById("miButton4");
+
+btn4.addEventListener("mouseover", () => {
+    btn4.setAttribute("style", "background-color: green");
+});
+
+
+// Mouse out =>
+btn4.addEventListener("mouseout", () => {
+    btn4.setAttribute("style", "background-color: grey");
+})
+
+
+// Mouse down =>
+const btn5 = document.getElementById("miButton5");
+
+btn5.addEventListener("mousedown", () => {
+    document.body.setAttribute("style", "background-color: red");
+})
+
+
+// Mouse up =>
+btn5.addEventListener("mouseup", () => {
+    document.body.setAttribute("style", "background-color: white");
+})
+
+
+// Keyup and keydown
