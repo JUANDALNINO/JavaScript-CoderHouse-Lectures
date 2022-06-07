@@ -131,3 +131,57 @@ function Flight(flightNumber, status) {
     function bornYear() {
         return 2016 - this.age; // This => se utiliza para acceder al objeto y a la prop age.
     }
+
+// Exercise:
+function Product(prodID, price) {
+    this.prodID = prodID;
+    this.price = price;
+
+    this.changePrice = function(discount) {
+        //your code goes here
+        this.price = price - ((discount/100) * price);
+    }
+}
+
+let prod1 = new Product(prodID, price);
+
+
+// --------------------
+// JSON => JavaScriptObjectNotation
+let curso = { // Variedad de datos en un objeto
+    titulo: "Js",
+    duracion: 2.2,
+    formato: "video",
+    bloque: ["Intro", "Func"],
+    inscribir: function(usuario) { // Método
+        console.log(usuario + " ahora estás inscrito");
+    }
+}
+
+// Leer o ejectuar el valor de una propiedad:
+    curso.titulo; // "Js"
+    curso["video"];
+
+// Leer o ejecutar un método:
+    curso.inscribir("Juan David");
+
+
+// Reasignación de valores:
+    curso.titulo  = "Python"; // Titulo se le reasigna el valor
+    
+// Reasignación de métodos => cambiar la función = el valor de la propiedad o método
+    curso.inscribir = function(){};
+
+
+    // Función constructora:
+    function CourseTwo (titulo, name) {
+        this.titulo = titulo;
+        this.name = name;
+        this.inscribir = function() {
+            console.log(name + " se ha inscrito");
+        }
+    }
+
+    let curso1 = new CourseTwo();
+
+    
