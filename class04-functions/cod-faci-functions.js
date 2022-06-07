@@ -56,6 +56,14 @@ function setReminder (theme) {
 }
 
 
+// No hay necesidad de agregar parámetros => pueden agregarse los argumentos en el futuro cuando se use la función:
+function sumaTodos() {
+    return arguments[0] + arguments[1]; // Siempre va a realizar esta operacion
+}
+console.log(sumaTodos(5,5));
+sumaTodos(20,20);
+
+
 //--------------------------------------------------
 // MULTIPLES PARÁMETROS:
 function myFun(x,y) {
@@ -114,3 +122,34 @@ return (num1+num2+num3) / 3;
         => Es recomendable usar el SCOPE LOCAL
 */
 
+
+//-------------------------------------------------------
+/*
+FUNCIONES ANÓNIMAS:
+*/
+
+// Example 1
+function executor (funcion) {
+    funcion();
+}
+
+function decirHola() {
+    console.log("Hello!");
+}
+
+// Llamado de la función
+executor(decirHola); // "Hello!"
+
+
+// Example 2
+executor(function() { // El mismo resultado sin necesidad de declarar la función DecirHola
+    console.log("Hello");
+})
+
+
+
+//---------------------------------------------------------
+/*
+EL CONTEXTO:
+
+*/
