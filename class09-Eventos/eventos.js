@@ -8,20 +8,14 @@
 
 
 
-// 01. addEventListener(par1, par2)
-// El primer parámetro corresponde al nombre del evento y el segundo a la función de respuesta.
-const btn1 = document.getElementById("miButton1");
-btn1.addEventListener("click", 
-    () => {
-        alert("I'm the button 1");
-    })
-
 
 // 02. OnClick
 const btn2 = document.getElementById("miButton2");
 btn2.onclick = () => {
     btn2.innerHTML = "I'm the button 2"
 };
+
+
 
 
 // 03. On HTML => sintaxis
@@ -65,4 +59,51 @@ btn5.addEventListener("mouseup", () => {
 })
 
 
-// Keyup and keydown
+
+// Evento click:
+// 01. addEventListener(par1, par2)
+// El primer parámetro corresponde al nombre del evento y el segundo a la función de respuesta.
+const btn1 = document.getElementById("miButton1");
+btn1.addEventListener("click", button1);
+
+function button1() {
+    alert("I'm the button 1");
+}
+
+
+const button = document.querySelector(".miButton7");
+                //1. tipo de evento / 2. function 
+button.addEventListener("click", function() {
+    alert("Hello Juan");
+});
+
+
+
+// Objeto target:
+const h2 = document.getElementById("h2Estoy");
+const btn8 = document.getElementById("miButton8");
+btn8.addEventListener("click", function(){
+
+    if(h2.style.display != "none") {
+        h2.style.display = "none";
+        btn8.textContent = "Mostrar";
+    } else {
+        h2.style.display = "block";
+        btn8.textContent = "Ocultar";
+    }
+
+})
+
+
+
+
+//SetTimeOut:
+//  Aparece en => Tarea con tiempo
+// 1. Función / 2. Milisegundos:
+    setTimeout(function() {
+        alert("3 Segundos después...");
+    }, 3000);
+
+
+
+// Evento teclado:

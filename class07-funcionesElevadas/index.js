@@ -5,9 +5,26 @@
 
 // Función flecha:
     // Se declara la función:
+    //         (parametros)(código)
     let doubler = (num) => number*2;
     // Se llama la función
-    doubler(4;)
+    doubler(4);
+
+
+    // Si una función flecha tiene un solo parámetro, los paréntesis que encierran el parámetro pueden ser omitidos:
+    const doubler = item => item * 2;
+
+    // Más de un argumento:
+    const multiplier = (item, multi) => item * multi;
+    multiplier(4, 2);
+
+
+// TYPE OF => Comprobar el tipo de una variable:
+    console.log(typeof ""); // String
+    console.log(typeof 0); // Number
+    console.log(typeof []); // object = los arreglos son técnicamente un tipo de objeto.
+    console.log(typeof {});// objetct
+
 
 // 1. Funcion que retorna función
 function mayorQue(n) {
