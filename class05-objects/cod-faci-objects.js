@@ -106,6 +106,15 @@ function Flight(flightNumber, status) {
     objectName.methodName();
 
 
+        let cadena = "HOLA CODER";
+    //Propiedad de objeto String: Largo de la cadena.
+    console.log(cadena.length);
+    //Método de objeto String: Pasar a minúscula.
+    console.log(cadena.toLowerCase());
+    //Método de objeto String: Pasar a mayúscula.
+    console.log(cadena.toUpperCase());
+
+
 // This => referencia el objeto actual = se puede utilizar para acceder a las propiedades y métodos del objeto
     // Definir métodos dentro del constructor:
     function cars(marca, modelo) {
@@ -184,4 +193,52 @@ let curso = { // Variedad de datos en un objeto
 
     let curso1 = new CourseTwo();
 
-    
+
+
+// CLASES => 
+
+// Declaración
+class Curso {
+    constructor(titulo) {
+        this.titulo = titulo;
+    }
+
+    inscribir(usuario) {
+        console.log(usuario + " se ha inscrito");
+    }
+};
+
+    // Ejecutar métodos:
+    let javaScript = new Curso("Js");
+    console.log(javaScript.titulo); // "Js"
+
+    javaScript.inscribir("Juan David") // Activar método de inscribir
+
+
+// CONSTRUCTOR =>
+//  - Una clase solo puede contener 1 constructor
+    class Curso {
+        constructor(titulo, duracion, color) {
+            this.titulo = titulo;
+            this.duracion = duracion;
+            this.color = color;
+        }
+    }
+
+
+// Abstracción
+// Métodos accesores:
+    // Get
+
+    // Set
+
+    class Usuario {
+        constructor(nombre) {
+            this.nombre = nombre;
+
+
+        }
+    }
+
+    let user1 = new Usuario("Marcos");
+    user1.nombre = "Uriel";

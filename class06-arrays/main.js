@@ -303,3 +303,15 @@ for (let i = 0; i < numeros.length; i++) {
 
 
 // CHALLENGE WITH ARRAYS + OBJETOS:
+
+// Array de desayunos:
+let breakfasts = ['Cinnamon Doughnuts', 'Waffles', 'Granola', 'Chorizo Burrito', 'French Toast'];
+userIndex();
+
+function userIndex() {
+    // Cambio de desayuno:
+    let index = Number(prompt("Introduzca indice:"));
+
+    // Cambie el desayuno según el indice:
+    alert(breakfasts[index]); // Con [busca lo que se escriba acá]
+}

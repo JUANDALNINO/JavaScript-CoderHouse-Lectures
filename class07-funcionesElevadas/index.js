@@ -2,6 +2,13 @@
 // Los parámetros son funciones
 // Lo que retorna funciones
 
+
+// Función flecha:
+    // Se declara la función:
+    let doubler = (num) => number*2;
+    // Se llama la función
+    doubler(4;)
+
 // 1. Funcion que retorna función
 function mayorQue(n) {
     return (m) => m>n; // funcion retornada
