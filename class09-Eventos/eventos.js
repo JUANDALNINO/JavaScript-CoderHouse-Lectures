@@ -100,10 +100,37 @@ btn8.addEventListener("click", function(){
 //SetTimeOut:
 //  Aparece en => Tarea con tiempo
 // 1. Función / 2. Milisegundos:
+/*
     setTimeout(function() {
         alert("3 Segundos después...");
-    }, 3000);
-
+    }, 1000);
+*/
 
 
 // Evento teclado:
+/*
+const input = document.getElementById("input");
+input.addEventListener("keydown", function() {
+    alert("Tecla presionada");
+})
+*/
+
+
+
+// Evento SUBMIT:
+// Se previene el refresh automatico con el e en la función =>
+const form = document.getElementById("course-form");
+
+form.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    let email = document.getElementById("exampleInputEmail1").value;
+    let pass = document.getElementById("exampleInputPassword1").value;
+
+    alert("Your email is: " + email + " and your password is " + pass);
+})
+
+
+
+// Evento cambio de valor:
