@@ -129,8 +129,50 @@ form.addEventListener("submit", function(e) {
     let pass = document.getElementById("exampleInputPassword1").value;
 
     alert("Your email is: " + email + " and your password is " + pass);
+
+    create_card(email, pass);
 })
 
 
 
-// Evento cambio de valor:
+// Evento cambio de valor: Change value
+// Al cambiar el valor del input se ejecuta la función
+const checkbox = document.getElementById("checkbox");
+checkbox.addEventListener("change", function() {
+    alert("Cambio de valor");
+})
+
+
+
+// Document Loaded:
+// El documento Js debe estar al final y debe ser lo último que se cargue
+
+
+
+
+// Crear nuevos elementos:
+//  Crear cartas: Datos a partir del HTML que se necesiten mostrar
+const row = document.querySelector(".row");
+function create_card(title, description) {
+    let html = `<div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                <div class="caption">
+                    <h3 id="title_card">${title}</h3>
+                    <p id="description_card">${description}</p>
+                    <p>
+                    <a href="#" class="btn btn-danger" id="btn_delete">Eliminar</a>
+                    </p>
+                </div>
+                </div>
+                </div>`;
+    row.innerHTML += html;
+}
+
+
+// Eliminar elementos al DOM:
+let p2 = document.getElementById("btn_delete");
+p2.addEventListener("click", deleteCard());
+
+function deleteCard() {
+    alert("Carta a eliminar")
+};
