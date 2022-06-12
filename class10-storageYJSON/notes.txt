@@ -20,5 +20,7 @@ STORAGE => Almacenamiento
 
     
     2. sessionStorage:
+        - Exclusivo de cada pestaña = se cierra y se reinicia la info.
 
 
+=> Min 1.27

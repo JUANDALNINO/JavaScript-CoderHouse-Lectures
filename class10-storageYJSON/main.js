@@ -35,8 +35,8 @@ sessionStorage.getItem("usuario");
 
 
 
-// 03. Recorrer Storage:
-    // Session:
+// 03. Recorrer Storage: => recorrer las key en el storage
+    // Session or local:
     sessionStorage.setItem("nombre", "Juan");
     sessionStorage.setItem("dogs", "jua");
     sessionStorage.setItem("girl", "laura");
@@ -46,3 +46,36 @@ sessionStorage.getItem("usuario");
         let key = sessionStorage.key(i);
         console.log(sessionStorage.getItem(key));
     }
+
+
+    
+//Session:
+sessionStorage.setItem("Seleccionados", [1,2,3,4,5]); // Hay un array
+let lista = sessionStorage.getItem("Seleccionados").split(","); //Método split para recuperar bien la info.
+
+console.log(lista);
+
+//Boolean:
+sessionStorage.setItem("esValido", true); // Boolean
+let bandera = (sessionStorage.getItem("esValido") == "true");
+
+console.log(bandera);
+
+
+
+
+// 04. Eliminar datos:
+    localStorage.setItem("bienvenida", "Hola Code");
+    sessionStorage.setItem("esValido", true);
+
+    // -> Por clave = removeItem
+        localStorage.removeItem("bienvenida");
+        sessionStorage.removeItem("esValido");
+
+    // -> Eliminar todo = clear()
+        localStorage.clear(); // Elimina todo
+        sessionStorage.clear(); // Elimina todo
+
+
+
+// JSON
