@@ -2,7 +2,20 @@ STORAGE => Almacenamiento
     - Api de Almacenamiento web. Permite almacenar en el navegador sin necesidad de conexión.
 
     - Dos tipos de storage:
-        localStorage
-        sessionStorage
+        localStorage = Info. almacenada incluso al cerrar el navegador
+        sessionStorage = info. mientras la pestaña está abierta
+
+    
+    1. localStorage:
+        - Variable global preexistente => se almacenan en el navegador de forma indefinida o hasta que se borren los datos de navegación.
+        - De manera local
+        - Se guardan preferencias de usuarios
+
+    Examples:
+        - En DevTools = application = localStorage
+        - La info. almacenada tiene (key) and (value)
+            -> Key = id de la info
+            -> Value = información en sí
+        localStorage.setItem("key/llave/id", "valor a guardar");
 
     
