@@ -1,0 +1,8 @@
+STORAGE => Almacenamiento
+    - Api de Almacenamiento web. Permite almacenar en el navegador sin necesidad de conexión.
+
+    - Dos tipos de storage:
+        localStorage
+        sessionStorage
+
+    
