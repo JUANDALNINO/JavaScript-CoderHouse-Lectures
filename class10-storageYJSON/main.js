@@ -48,7 +48,7 @@ sessionStorage.getItem("usuario");
     }
 
 
-    
+
 //Session:
 sessionStorage.setItem("Seleccionados", [1,2,3,4,5]); // Hay un array
 let lista = sessionStorage.getItem("Seleccionados").split(","); //Método split para recuperar bien la info.
@@ -79,3 +79,69 @@ console.log(bandera);
 
 
 // JSON
+// JSON
+    /* Formato para almacenar info. de un objeto en un string
+        Formato de texto que representa datos de objetos Js
+        Enviar y almacenar datos en apps web
+        JSON = es un objeto global. Permite transformar.
+        */
+
+
+// 01. Convertir OBJETOS => JSON
+    // Acepta un objeto como parámetro
+    // Se hacer para almacenar info. de un objeto en storage o se desean enviar datos al servidor
+    JSON.stringify(objeto como parametro) // = Transformar objeto a JSON
+
+        //example:
+        let objeto = {
+            id: 01,
+            producto: "Arroz",
+            precio: 3000
+        };
+
+        let enJSON = JSON.stringify(objeto);
+
+        console.log(enJSON); // '{"id":1,"producto":"Arroz","precio":3000}' // string
+        console.log(typeof objeto); // object
+        console.log(typeof enJSON); // string
+
+        // Se guarda el objeto
+        localStorage.setItem("objeto1", enJSON); 
+
+    
+// 02. Convertir JSON => Objetos:
+        // Transformar string en formato JSON a objeto Js
+        // Cuando se necesita un objeto a partir de esos datos string
+        JSON.parse(string como parametro);
+
+        let enJSON = '{"id":1,"producto":"Arroz","precio":3000}'; // String formato JSON
+
+        let objeto2 = JSON.parse(enJSON); // Se guarda ya convertido
+
+        console.log(typeof enJSON);  // string
+        console.log(typeof objeto2); // object
+        console.log(objeto2.producto); // "Arroz"
+
+
+    //Example:
+        //01. Objeto:
+        let objeto = {
+            id: 01,
+            producto: "Arroz",
+            precio: 3000
+        };
+
+        // 02. Convertir el objeto a JSON:
+        let objetoEnJSON = JSON.stringify(objeto);
+
+        // 03. Dato de tipo:
+        console.log(typeof objetoEnJSON); // string
+            // Result:
+            '{"id":1,"producto":"Arroz","precio":3000}'
+
+        //04. Converir JSON a objeto:
+        let JSONenObjeto = JSON.parse(objetoEnJSON); // Objeto
+            // Result:
+            //{id: 1, producto: 'Arroz', precio: 3000};
+
+    

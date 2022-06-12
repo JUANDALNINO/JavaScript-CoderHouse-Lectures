@@ -16,4 +16,3 @@ function nightMode() {
 };
 
 
-// JSON
