@@ -32,3 +32,17 @@ sessionStorage.setItem("usuario", "LucasSa");
 
 // GetItem: Para recuperar la info. almacenada
 sessionStorage.getItem("usuario");
+
+
+
+// 03. Recorrer Storage:
+    // Session:
+    sessionStorage.setItem("nombre", "Juan");
+    sessionStorage.setItem("dogs", "jua");
+    sessionStorage.setItem("girl", "laura");
+
+    //Recorrer storage:
+    for(let i=0; i<sessionStorage.length; i++) {
+        let key = sessionStorage.key(i);
+        console.log(sessionStorage.getItem(key));
+    }

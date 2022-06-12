@@ -22,4 +22,3 @@ STORAGE => Almacenamiento
     2. sessionStorage:
 
 
-    Min.1.14
