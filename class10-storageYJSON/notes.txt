@@ -19,3 +19,7 @@ STORAGE => Almacenamiento
         localStorage.setItem("key/llave/id", "valor a guardar");
 
     
+    2. sessionStorage:
+
+
+    Min.1.14

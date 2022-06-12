@@ -24,3 +24,11 @@ localStorage.getItem("key/llave/id");
     document.body.append(parrafo);
 
     
+
+// 02. Session Storage:
+
+// SetItem: Para almacenar un valor
+sessionStorage.setItem("usuario", "LucasSa");
+
+// GetItem: Para recuperar la info. almacenada
+sessionStorage.getItem("usuario");

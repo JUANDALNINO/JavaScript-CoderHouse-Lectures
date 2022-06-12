@@ -6,11 +6,12 @@ let backDiv = document.getElementById("back");
 let buttonClick = document.getElementById("buttonDiv");
 
 
-buttonClick.addEventListener("click", nightMode());
+buttonClick.addEventListener("click", function() {
+    nightMode();
+});
 
-function  nightMode() {
+function nightMode() {
     backDiv.style.backgroundColor = "whitesmoke";
+    localStorage.setItem("Background color", "Dark");
 };
 
-
-let saveBack = localStorage.setItem("Background color", buttonClick);
