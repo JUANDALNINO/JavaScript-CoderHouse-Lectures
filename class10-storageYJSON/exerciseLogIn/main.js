@@ -28,18 +28,45 @@ btnCreateAccount.addEventListener("click", function() {
     agregarUsuario();
 })
 
+
+
+
     // Agregar usuario:
+    let username ="";
+    let password ="";
     function agregarUsuario() {
-        let username = document.getElementById("username").value;
-        let password = document.getElementById("password").value;
+        username = document.getElementById("newUsername").value;
+        password = document.getElementById("newPassword").value;
 
-        let usuario = new Usuario(getId(), username, password);
-
-        usuariosArray.push(usuario);
-
-        alert("Usuario creado con éxito");
-        console.table(usuariosArray);
+        conditionNewUser(username, password);
     }
+
+
+    // New in Array:
+    let usuarioNew = "";
+    function newArray() {
+        usuarioNew = new Usuario(getId(), username, password);
+
+            usuariosArray.push(usuarioNew);
+
+            alert("Usuario creado con éxito");
+
+            newUserLocal();
+
+            //document.location.reload();
+    }
+
+    // Conditional for new User:
+    function conditionNewUser(user, pass) {
+
+        if(user.length!=0 && pass.length!= 0) {
+            newArray();
+
+        } else {
+            return alert("Por favor introduce tu usuario y contraseña");
+        }
+    }
+
 
     // Get ID:
     function getId() {
@@ -51,4 +78,31 @@ btnCreateAccount.addEventListener("click", function() {
         }
     }
 
+
+    // Save on localStorage:
+    let lastItem ="";
+    function newUserLocal() {
+        lastItem = usuariosArray[usuariosArray.length-1];
+
+        let userJson = JSON.stringify(lastItem); // Convertir primero para guardar
+
+        localStorage.setItem("username", userJson); // Guardar
+
+        // Sacar = convertir de JSON a obj
+        let jsonUser = JSON.parse(userJson);
+        console.log(jsonUser);
+
+    }
+
 // Login:
+
+    // Function welcome:
+/*    function newWindow() {
+        window.open("./pageTwo.html");
+    }
+
+    function welcome() {
+            /*user name => username && password => password) {
+            return newWindow()*/ 
+
+            /*Please introduce a valid credits*/
