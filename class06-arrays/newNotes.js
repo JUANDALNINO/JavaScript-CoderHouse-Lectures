@@ -1,3 +1,4 @@
+// https://www.freecodecamp.org/espanol/news/el-manual-de-arreglos-en-javascript/
 
 // Arrays:
     let array = [1,2]; // Dentro de [] y separados con ,
@@ -32,4 +33,26 @@
         console.log(`Element at index ${i} is ${salad[i]}`);
     };
     // Result:
-    
+/*  Element at index 0 is tomato
+    Element at index 1 is pinapple
+    Element at index 2 is egg
+    Element at index 3 is abocato */
+
+
+// Añadir elementos al array:
+    // push() = Agrega elemento al final del array
+    salad.push("peanuts");
+
+    // unshift() = Agrega elemento al inicio del array
+    salad.unshift("peanuts");
+
+
+// Eliminar elementos del array:
+    //pop() = Elimina elemento final del array
+    salad.pop();
+
+    //shift() = Elimina elemento al inicio del array
+    salad.shift();
+
+
+// Copiar y clonar array:
