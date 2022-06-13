@@ -20,15 +20,13 @@ let usuariosArray = [usuario1, usuario2];
 
 
 
-// Create account:
+// Create account:-----------------------------------------
 
 // Click => Create
 let btnCreateAccount = document.getElementById("btnCreate");
 btnCreateAccount.addEventListener("click", function() {
     agregarUsuario();
 })
-
-
 
 
     // Agregar usuario:
@@ -80,6 +78,18 @@ btnCreateAccount.addEventListener("click", function() {
 
 
     // Save on localStorage:
+    function newUserLocal() {
+        let userJson = JSON.stringify(usuariosArray); // Convertir primero para guardar
+
+        localStorage.setItem("username", userJson); // Guardar
+        sessionStorage.setItem("username", userJson);
+
+        // Sacar = convertir de JSON a obj
+        let jsonUser = JSON.parse(userJson);
+        console.log(jsonUser);
+    }
+
+    /* 
     let lastItem ="";
     function newUserLocal() {
         lastItem = usuariosArray[usuariosArray.length-1];
@@ -91,18 +101,38 @@ btnCreateAccount.addEventListener("click", function() {
         // Sacar = convertir de JSON a obj
         let jsonUser = JSON.parse(userJson);
         console.log(jsonUser);
-
     }
+    */
 
-// Login:
+
+
+// Login:---------------------------------------------------
+let btnLogin = document.getElementById("btnLogin");
+btnLogin.addEventListener("click", function() {
+    recorrer();
+})
 
     // Function welcome:
 /*    function newWindow() {
         window.open("./pageTwo.html");
+    } */
+
+    let loginUsername = "";
+    let loginPassword = "";
+    function welcome() {
+        loginUsername = document.getElementById("username").value;
+        loginPassword = document.getElementById("password").value;
+
+        for(let i=0; i<localStorage.length; i++) {
+            let key = localStorage.key[i];
+            console.log(localStorage.getItem(key));
+        }
     }
 
-    function welcome() {
-            /*user name => username && password => password) {
-            return newWindow()*/ 
-
-            /*Please introduce a valid credits*/
+    //recorrer:
+    function recorrer() {
+        for(let i=0; i<localStorage.length; i++) {
+            let key = localStorage.key[i];
+            console.log(localStorage.getItem(key));
+        }
+    }
