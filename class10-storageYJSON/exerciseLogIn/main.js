@@ -82,7 +82,7 @@ btnCreateAccount.addEventListener("click", function() {
         let userJson = JSON.stringify(usuariosArray); // Convertir primero para guardar
 
         localStorage.setItem("username", userJson); // Guardar
-        sessionStorage.setItem("username", userJson);
+
 
         // Sacar = convertir de JSON a obj
         let jsonUser = JSON.parse(userJson);
