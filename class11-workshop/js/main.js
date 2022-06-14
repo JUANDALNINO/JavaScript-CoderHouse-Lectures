@@ -55,7 +55,7 @@ function showProducts(categoryName) {
 
     /*Product List*/
     const productList = document.getElementById("productList");
-    productList.innerHTML = "";
+    productList.innerHTML = ""; // Actualizar y vaciar página
     productsToShow.forEach(product => {
         const div = document.createElement("div");
         div.classList.add("product");
