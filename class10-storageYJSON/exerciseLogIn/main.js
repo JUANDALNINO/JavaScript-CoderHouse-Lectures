@@ -57,7 +57,7 @@ btnCreateAccount.addEventListener("click", function() {
     // Conditional for new User:
     function conditionNewUser(user, pass) {
 
-        if(user.length!=0 && pass.length!= 0) {
+        if(user.length==="" && pass.length=== "") {
             newArray();
 
         } else {

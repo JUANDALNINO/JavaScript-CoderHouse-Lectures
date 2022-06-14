@@ -56,3 +56,26 @@
 
 
 // Copiar y clonar array:
+
+
+
+// .find()
+let perrosEncontrados = [
+    {
+      raza: "Beagle",
+      color: "blanco"
+    },
+  
+    {
+      raza: "Chihuahua",
+      color: "amarillo"
+    },
+  
+    {
+      raza: "Pug",
+      color: "negro"
+    },
+  ]
+  
+  let miPerro = perrosEncontrados.find(({raza}) => raza === "Chihuahua");
+  

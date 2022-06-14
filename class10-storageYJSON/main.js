@@ -162,10 +162,10 @@ console.log(bandera);
             saveLocal(product, price); // Activando la funcion guardar con datos nuevos del usuario
         }
 
-        // Funcion guardar en local: // No se debe activar sola
-        function saveLocal(clave, valor) {
-            localStorage.setItem(clave, valor);
-        }
+            // Funcion guardar en local: // No se debe activar sola
+            function saveLocal(clave, valor) {
+                localStorage.setItem(clave, valor);
+            }
 
         // Guardar producto por producto:
         for(let producto of productos) {
@@ -201,6 +201,7 @@ console.log(bandera);
 
 //  REAL EXAMPLE: ---------------------------------------------
 
+// 1era. etapa: Array vacío donde guardar la info. ingresada en formato objeto. Guardar la info en local storage. Actualizar el array en cada momento.
         // 01. Crear array vacio:
         const productosArray = [];
 
@@ -211,8 +212,16 @@ console.log(bandera);
                 this.price = parseFloat(price); // Convertir a número
             }
         }
+        
 
-        // 03. Crear función para crear nuevos productos:
+        // 03. Función para guardar info. local:
+        // Funcion guardar en local: // No se debe activar sola
+        function saveLocal(clave, valor) {
+            localStorage.setItem(clave, valor);
+        }
+
+
+        // 04. Crear función para crear nuevos productos:
         function newProduct() {
             let productoNew = prompt("Producto");
             let priceNew = prompt("Price");
@@ -220,18 +229,44 @@ console.log(bandera);
             let newProduct = new Producto(productoNew, priceNew);
         
             productosArray.push(newProduct);
+
         
+            saveLocal("listaProductos", JSON.stringify(productosArray));
             console.table(productosArray);
         }
-        
-        // 04. Función para guardar info. local:
-        // Funcion guardar en local: // No se debe activar sola
-        function saveLocal(clave, valor) {
-            localStorage.setItem(clave, valor);
-        }
 
-        function newProductSave () {
-            for(let producto of productosArray) {
-                saveLocal(producto.id, JSON.stringify(productos));
+
+// 2da Etapa: Al cerrar la app. se puede recuperar los datos para ingresar:
+        // 05. Crear array vacio:
+        const almacenadosArray = [];
+
+        // 06. Crear clase constructora:
+        class Almacenado {
+            constructor(obj) {
+                this.obj = obj.product.toUpperCase(); // Mayus
+                this.price = parseFloat(obj.price); // Convertir a número
             }
         }
+
+        // 07. Función almacenados: Obtener el listado almacenado:
+        function obtenerAlmacenados() {
+            
+        const productosAlmacenados = JSON.parse(localStorage.getItem("listaProductos"));
+
+        // Iterar para transformar en objeto:
+        for(const producto of productosAlmacenados)
+        almacenadosArray.push(new Almacenado(producto));
+
+        console.table(almacenadosArray);
+        }
+
+
+        obtenerAlmacenados();
+
+
+        // 08. Encontrar elemento:
+        let producto;
+        let productoEnLs = JSON.stringify(localStorage.getItem("obj"));
+
+        
+        
