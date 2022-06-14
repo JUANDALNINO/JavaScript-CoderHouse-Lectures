@@ -81,15 +81,18 @@ btnCreateAccount.addEventListener("click", agregarUsuario);
     }
 
 
-// Button Login:
-    let btnLogin = document.getElementById("btnLogin");
-    btnLogin.addEventListener("click", function() {
 
-        obtenerAlmacenados();
-    })
 
 
 // Login: -------------------------
+// Button Login:
+let btnLogin = document.getElementById("btnLogin");
+btnLogin.addEventListener("click", function() {
+
+    obtenerAlmacenados();
+})
+
+
     let loginUsername = "";
     let loginPassword = "";
     function welcome() {
@@ -97,6 +100,7 @@ btnCreateAccount.addEventListener("click", agregarUsuario);
         loginUsername = document.getElementById("username").value;
         loginPassword = document.getElementById("password").value;
 
+        //isUserValid(loginUsername, loginPassword);
         singIn(loginUsername, loginPassword);
     }
 
@@ -107,7 +111,7 @@ btnCreateAccount.addEventListener("click", agregarUsuario);
     // Constructor for array:
     class Almacenado {
         constructor(obj) {
-            this.obj = parseFloat(obj.id);
+            this.id = parseFloat(obj.id);
             this.username = obj.username;
             this.password = obj.password;
         }
@@ -121,28 +125,27 @@ btnCreateAccount.addEventListener("click", agregarUsuario);
         for(const usuario of usersAlmacenados)
         usuariosAlmacenados.push(new Almacenado(usuario));
         
-        console.table(usuariosAlmacenados);
         welcome();
+        console.log(usuariosAlmacenados);
     }
 
 
     //Validación de datos:
-    function singIn(user, pass) {
+    function isUserValid(user, pass) {
         for(let i=0; i<usuariosAlmacenados.length; i++) {
             if(usuariosAlmacenados[i].username === user && usuariosAlmacenados[i].password === pass) {
-                console.log("Check")
+                return true;
             } else {
-                alert("Wrong, data");
+                return false;
             }
         }
-
-        // for(let i=0; i<usuariosAlmacenados.length; i++) {
-        //     if(user === usuariosAlmacenados[i].username && pass === usuariosAlmacenados[i].password) {
-        //         newWindow();
-        //     }
-        // }
     }
 
+
+    // SingIn:
+    function singIn(userna, passwo) {
+        isUserValid(userna, passwo);
+    }
 
      //Function welcome:
         function newWindow() {
