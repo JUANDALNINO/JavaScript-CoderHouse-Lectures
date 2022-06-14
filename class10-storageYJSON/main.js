@@ -90,7 +90,7 @@ console.log(bandera);
 // 01. Convertir OBJETOS => JSON
     // Acepta un objeto como parámetro
     // Se hacer para almacenar info. de un objeto en storage o se desean enviar datos al servidor
-    JSON.stringify(objeto como parametro) // = Transformar objeto a JSON
+    JSON.stringify(objetocomoparametro) // = Transformar objeto a JSON
 
         //example:
         let objeto = {
@@ -112,7 +112,7 @@ console.log(bandera);
 // 02. Convertir JSON => Objetos:
         // Transformar string en formato JSON a objeto Js
         // Cuando se necesita un objeto a partir de esos datos string
-        JSON.parse(string como parametro);
+        JSON.parse(stringcomoparametro);
 
         let enJSON = '{"id":1,"producto":"Arroz","precio":3000}'; // String formato JSON
 

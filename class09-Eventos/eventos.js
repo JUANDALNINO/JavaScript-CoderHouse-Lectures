@@ -176,3 +176,6 @@ p2.addEventListener("click", deleteCard());
 function deleteCard() {
     alert("Carta a eliminar")
 };
+
+
+//

@@ -16,7 +16,7 @@ let usuario2 = new Usuario(2, "luisaf", "Martin.2014");
 
 
 // Array:
-let usuariosArray = [usuario1, usuario2];
+let usuariosArray = [];
 
 
 
@@ -24,9 +24,7 @@ let usuariosArray = [usuario1, usuario2];
 
 // Click => Create
 let btnCreateAccount = document.getElementById("btnCreate");
-btnCreateAccount.addEventListener("click", function() {
-    agregarUsuario();
-})
+btnCreateAccount.addEventListener("click", agregarUsuario);
 
 
     // Agregar usuario:
@@ -49,15 +47,15 @@ btnCreateAccount.addEventListener("click", function() {
 
             alert("Usuario creado con éxito");
 
-            newUserLocal();
+            saveLocal("usuarios", JSON.stringify(usuariosArray));
 
-            //document.location.reload();
+            console.table(usuariosArray);
     }
 
     // Conditional for new User:
     function conditionNewUser(user, pass) {
 
-        if(user.length==="" && pass.length=== "") {
+        if(user.length!=0 && pass.length!=0) {
             newArray();
 
         } else {
@@ -77,62 +75,149 @@ btnCreateAccount.addEventListener("click", function() {
     }
 
 
-    // Save on localStorage:
-    function newUserLocal() {
-        let userJson = JSON.stringify(usuariosArray); // Convertir primero para guardar
-
-        localStorage.setItem("username", userJson); // Guardar
-
-
-        // Sacar = convertir de JSON a obj
-        let jsonUser = JSON.parse(userJson);
-        console.log(jsonUser);
+    // Funcion guardar en local:
+    function saveLocal(key, value) {
+        localStorage.setItem(key, value);
     }
 
-    /* 
-    let lastItem ="";
-    function newUserLocal() {
-        lastItem = usuariosArray[usuariosArray.length-1];
 
-        let userJson = JSON.stringify(lastItem); // Convertir primero para guardar
+// Button Login:
+    let btnLogin = document.getElementById("btnLogin");
+    btnLogin.addEventListener("click", function() {
 
-        localStorage.setItem("username", userJson); // Guardar
-
-        // Sacar = convertir de JSON a obj
-        let jsonUser = JSON.parse(userJson);
-        console.log(jsonUser);
-    }
-    */
+        obtenerAlmacenados();
+    })
 
 
-
-// Login:---------------------------------------------------
-let btnLogin = document.getElementById("btnLogin");
-btnLogin.addEventListener("click", function() {
-    recorrer();
-})
-
-    // Function welcome:
-/*    function newWindow() {
-        window.open("./pageTwo.html");
-    } */
-
+// Login: -------------------------
     let loginUsername = "";
     let loginPassword = "";
     function welcome() {
+
         loginUsername = document.getElementById("username").value;
         loginPassword = document.getElementById("password").value;
 
-        for(let i=0; i<localStorage.length; i++) {
-            let key = localStorage.key[i];
-            console.log(localStorage.getItem(key));
+        singIn(loginUsername, loginPassword);
+    }
+
+
+    // Recuperar datos en array:
+    const usuariosAlmacenados = [];
+
+    // Constructor for array:
+    class Almacenado {
+        constructor(obj) {
+            this.obj = parseFloat(obj.id);
+            this.username = obj.username;
+            this.password = obj.password;
         }
     }
 
-    //recorrer:
-    function recorrer() {
-        for(let i=0; i<localStorage.length; i++) {
-            let key = localStorage.key[i];
-            console.log(localStorage.getItem(key));
-        }
+
+    // Obtener listado:
+    function obtenerAlmacenados() {
+        const usersAlmacenados = JSON.parse(localStorage.getItem("usuarios"));
+
+        for(const usuario of usersAlmacenados)
+        usuariosAlmacenados.push(new Almacenado(usuario));
+        
+        console.table(usuariosAlmacenados);
+        welcome();
     }
+
+
+    //Validación de datos:
+    function singIn(user, pass) {
+        for(let i=0; i<usuariosAlmacenados.length; i++) {
+            if(usuariosAlmacenados[i].username === user && usuariosAlmacenados[i].password === pass) {
+                console.log("Check")
+            } else {
+                alert("Wrong, data");
+            }
+        }
+
+        // for(let i=0; i<usuariosAlmacenados.length; i++) {
+        //     if(user === usuariosAlmacenados[i].username && pass === usuariosAlmacenados[i].password) {
+        //         newWindow();
+        //     }
+        // }
+    }
+
+
+     //Function welcome:
+        function newWindow() {
+            window.open("./pageTwo.html");
+        }
+
+
+
+    // Conditional for new User:
+    // function conditionNewUser(user, pass) {
+
+    //     if(user.length!=0 && pass.length!=0) {
+    //         obtenerAlmacenados();
+
+    //         singIn(user, pass);
+
+    //     } else {
+    //         return alert("Por favor introduce tu usuario y contraseña");
+    //     }
+    // }
+
+
+    // // Save on localStorage:
+    // function newUserLocal() {
+    //     let userJson = JSON.stringify(usuariosArray); // Convertir primero para guardar
+
+    //     localStorage.setItem("username", userJson); // Guardar
+
+
+    //     // Sacar = convertir de JSON a obj
+    //     let jsonUser = JSON.parse(userJson);
+    //     console.log(jsonUser);
+    // }
+
+    // /* 
+    // let lastItem ="";
+    // function newUserLocal() {
+    //     lastItem = usuariosArray[usuariosArray.length-1];
+
+    //     let userJson = JSON.stringify(lastItem); // Convertir primero para guardar
+
+    //     localStorage.setItem("username", userJson); // Guardar
+
+    //     // Sacar = convertir de JSON a obj
+    //     let jsonUser = JSON.parse(userJson);
+    //     console.log(jsonUser);
+    // }
+    // */
+
+
+
+    // // Login:---------------------------------------------------
+    // let btnLogin = document.getElementById("btnLogin");
+    // btnLogin.addEventListener("click", function() {
+    //     recorrer();
+    // })
+
+    //    
+
+    //     let loginUsername = "";
+    //     let loginPassword = "";
+    //     function welcome() {
+    //         loginUsername = document.getElementById("username").value;
+    //         loginPassword = document.getElementById("password").value;
+
+    //         for(let i=0; i<localStorage.length; i++) {
+    //             let key = localStorage.key[i];
+    //             console.log(localStorage.getItem(key));
+    //         }
+    //     }
+
+    //     //recorrer:
+    //     function recorrer() {
+    //         for(let i=0; i<localStorage.length; i++) {
+    //             let key = localStorage.key[i];
+    //             console.log(localStorage.getItem(key));
+    //         }
+    //     }
