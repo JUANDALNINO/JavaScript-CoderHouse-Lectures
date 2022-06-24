@@ -2,6 +2,7 @@
 
 /*API => Una librería
     API REST => Tener recursos, acceder a ellos y comunicarse con estos recursos
+    CORS => restricción de los navegadores. 
 */
 
 // Conectar a la API
