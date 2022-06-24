@@ -53,4 +53,33 @@ clearInterval();
 clearTimeout();
 
 
-// 55 min
+// PROMISES:
+    /* Evento a futuro
+    El motor de JavaScript tampoco pierde el tiempo, él comienza a ejecutar otras partes del código, a la espera del valor devuelto de la promesa.
+
+*/
+    // 3 estados posibles:
+    // 1. pending
+    // 2. fulfilled
+    // 3. rejected
+
+    const promise = (res) => new Promise( (resolve, rejected) => {
+        if(res) {
+            resolve("Se resolvió la promesa");
+        } else {
+            rejected("No se resolvió");
+        }
+    });
+
+    console.log("Promesa resulta", promise(true));
+    console.log("Promesa NO resulta", promise(false));
+
+
+    // .then() => promesa resuelta
+    // .catch() => promesa rechazada
+    // .finally() => Se ejectuta siempre / default
+        promise(true) // Or (false) => for catch
+        .then((res) => console.log(res))
+        .catch((error) => console.log(error))
+        .finally(() => console.log());
+
